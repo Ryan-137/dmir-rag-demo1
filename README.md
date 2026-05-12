@@ -43,7 +43,7 @@ git clone https://github.com/answerend42/dmir-rag-demo.git
 
 - 更新 apt 软件包列表：`sudo apt update`
 - 安装 Node.js 和 npm：`sudo apt install nodejs npm -y`
-- **备注**：项目中使用的`node`版本为`v22.14.0` ， `npm`版本为`10.9.2`
+- **备注**：当前项目已使用 `node v26.0.0`、`npm 11.12.1` 完成前端依赖安装和构建验证。
 
 #### 3. 安装前端组件：
 
@@ -78,7 +78,7 @@ npm run dev -- --mode production
 ```
 
 ### 部署前端 (MacOS)
-- **备注**：项目中使用的`node`版本为`v22.14.0` ， `npm`版本为`10.9.2`
+- **备注**：当前项目已使用 `node v26.0.0`、`npm 11.12.1` 完成前端依赖安装和构建验证。
 #### 1. 安装 Node.js
 
 ```shell
@@ -139,17 +139,17 @@ brew install uv
 export UV_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-#### 2. 创建 Python 3.14 环境
+#### 2. 创建 Python 3.14.4 环境
 
 在项目根目录执行：
 
 ```shell
-uv venv --python 3.14
+uv venv --python 3.14.4
 source .venv/bin/activate
 python -V
 ```
 
-如果本机没有 Python 3.14，`uv` 会自动下载可用版本；也可以先查看可用版本：
+如果本机没有 Python 3.14.4，`uv` 会自动下载可用版本；也可以先查看可用版本：
 
 ```shell
 uv python list
@@ -157,17 +157,10 @@ uv python list
 
 #### 3. 安装后端依赖
 
-下面这组依赖在 Python `3.14.4` 下完成过后端导入和基础接口验证。项目代码使用旧版 LangChain 入口，因此需要固定 `langchain` 相关版本；其他底层依赖交给 `uv` 自动解析适配当前 Python 版本。
+后端依赖已固化在 `backend/requirements.txt`，这组版本在 Python `3.14.4` 下完成过后端导入和基础接口验证。GitHub Actions 也会使用同一个文件安装依赖，避免本地和线上环境不一致。
 
 ```shell
-uv pip install \
-  fastapi==0.112.2 uvicorn==0.30.6 python-multipart==0.0.20 \
-  pandas pypdf pdfplumber PyMuPDF \
-  'unstructured[pdf]' chromadb pymilvus pypinyin \
-  python-dotenv boto3 \
-  langchain==0.3.27 langchain-community==0.3.31 langchain-core==0.3.83 \
-  langchain-huggingface==0.3.1 langchain-text-splitters==0.3.11 \
-  transformers sentence-transformers accelerate openai requests torch
+uv pip install -r backend/requirements.txt
 ```
 
 #### 4. 使用 Hugging Face Mirror（推荐）
