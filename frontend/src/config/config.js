@@ -1,3 +1,7 @@
+/**
+ * @file config.js
+ * @brief 按环境区分的前端 API 端点配置。
+ */
 const config = {
               development: {
                 apiBaseUrl: 'http://localhost:8001'

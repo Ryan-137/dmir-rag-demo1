@@ -1,3 +1,7 @@
+/**
+ * @file RandomImage.jsx
+ * @brief 预览面板的空状态插图组件。
+ */
 import React, { useState, useEffect } from 'react';
 import image1 from '../assets/01.jpg';
 import image2 from '../assets/02.jpg';
@@ -10,6 +14,11 @@ import image8 from '../assets/08.jpg';
 import image9 from '../assets/09.jpg';
 import image10 from '../assets/10.jpg';
 
+/**
+ * @brief 显示一张随机内置图片和对应的空状态消息。
+ * @param {{message: string}} props 组件属性。
+ * @returns {JSX.Element} 空状态插图和消息。
+ */
 const RandomImage = ({ message }) => {
   const [randomImage, setRandomImage] = useState(null);
 
@@ -36,4 +45,4 @@ const RandomImage = ({ message }) => {
   );
 };
 
-export default RandomImage; 
+export default RandomImage;

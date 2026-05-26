@@ -1,13 +1,18 @@
+"""! @file parsing_service.py
+@brief 将已读入页文本转换为结构化内容的 PDF 解析策略。
+"""
+
 import logging
 from typing import Dict, List
-import fitz  # PyMuPDF
+import fitz  # PyMuPDF 库
 import pandas as pd
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
 class ParsingService:
-    """
+    """! @brief 将已读入 PDF 文本解析为前端友好的结构。
+
     PDF文档解析服务类
     
     该类提供多种解析策略来提取和构建PDF文档内容，包括：
@@ -18,7 +23,14 @@ class ParsingService:
     """
 
     def parse_pdf(self, text: str, method: str, metadata: dict, page_map: list = None) -> dict:
-        """
+        """! @brief 使用指定方法解析PDF文档.
+        @param text PDF文档的文本内容。
+        @param method 解析方法：all_text、by_pages、by_titles 或 text_and_tables。
+        @param metadata 文档元数据，包括文件名和其他属性。
+        @param page_map 包含每页内容和元数据的字典列表。
+        @return 解析后的文档数据，包括元数据和结构化内容。
+        @throws ValueError 当 page_map 为空或方法不支持时抛出。
+
         使用指定方法解析PDF文档
 
         参数:
@@ -51,7 +63,7 @@ class ParsingService:
             else:
                 raise ValueError(f"Unsupported parsing method: {method}")
                 
-            # Create document-level metadata
+            # 创建文档级元数据
             document_data = {
                 "metadata": {
                     "filename": metadata.get("filename", ""),
@@ -123,7 +135,7 @@ class ParsingService:
         for page in page_map:
             lines = page["text"].split('\n')
             for line in lines:
-                # Simple heuristic: consider lines with less than 60 chars and all caps as titles
+                # 简单启发式：将少于 60 个字符且全大写的行视为标题
                 if len(line.strip()) < 60 and line.isupper():
                     if current_title:
                         parsed_content.append({
@@ -137,7 +149,7 @@ class ParsingService:
                 else:
                     current_content.append(line)
 
-        # Add the last section
+        # 添加最后一个章节
         if current_title:
             parsed_content.append({
                 "type": "section",
@@ -163,8 +175,8 @@ class ParsingService:
         """
         parsed_content = []
         for page in page_map:
-            # Extract tables using tabula-py or similar library
-            # For this example, we'll just simulate table detection
+            # 可使用 tabula-py 或类似库提取表格
+            # 当前示例仅模拟表格检测
             content = page["text"]
             if '|' in content or '\t' in content:
                 parsed_content.append({
@@ -178,4 +190,4 @@ class ParsingService:
                     "content": content,
                     "page": page["page"]
                 })
-        return parsed_content 
+        return parsed_content

@@ -1,8 +1,16 @@
-// src/pages/Search.jsx
+// 文件路径：src/pages/Search.jsx
+/**
+ * @file Search.jsx
+ * @brief 语义检索工作流页面。
+ */
 import React, { useState, useEffect } from 'react';
 import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
 
+/**
+ * @brief 渲染查询控件、集合选择和搜索结果。
+ * @returns {JSX.Element} 搜索工作流页面。
+ */
 const Search = () => {
   const [query, setQuery] = useState('');
   const [collection, setCollection] = useState('');
@@ -136,7 +144,7 @@ const Search = () => {
       <h2 className="text-2xl font-bold mb-6">相似性检索</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Panel - Search Controls */}
+        {/* 左侧面板：搜索控件 */}
         <div className="col-span-3 space-y-4">
           <div className="p-4 border rounded-lg bg-white shadow-sm">
             <div className="space-y-4">
@@ -261,7 +269,7 @@ const Search = () => {
           )}
         </div>
 
-        {/* Right Panel - Results */}
+        {/* 右侧面板：结果 */}
         <div className="col-span-9 border rounded-lg bg-white shadow-sm">
           {results.length > 0 ? (
             <div className="p-4">

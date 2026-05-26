@@ -1,8 +1,16 @@
-// src/pages/EmbeddingFile.jsx
+// 文件路径：src/pages/EmbeddingFile.jsx
+/**
+ * @file EmbeddingFile.jsx
+ * @brief 嵌入生成和已嵌入文档管理页面。
+ */
 import React, { useState, useEffect } from 'react';
 import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
 
+/**
+ * @brief 渲染从已读入或已分块文档创建嵌入的控件。
+ * @returns {JSX.Element} 嵌入工作流页面。
+ */
 const EmbeddingFile = () => {
   const [selectedDoc, setSelectedDoc] = useState('');
   const [embeddingProvider, setEmbeddingProvider] = useState('openai');
@@ -272,7 +280,7 @@ const EmbeddingFile = () => {
       <h2 className="text-2xl font-bold mb-6">向量存储</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Panel */}
+        {/* 左侧面板 */}
         <div className="col-span-3 space-y-4">
           <div className="p-4 border rounded-lg bg-white shadow-sm">
             <div>
@@ -340,7 +348,7 @@ const EmbeddingFile = () => {
           )}
         </div>
 
-        {/* Right Panel */}
+        {/* 右侧面板 */}
         <div className="col-span-9 border rounded-lg bg-white shadow-sm">
           {renderRightPanel()}
         </div>

@@ -1,3 +1,7 @@
+"""! @file embedding_service.py
+@brief 嵌入模型提供方抽象和持久化辅助逻辑。
+"""
+
 import os
 import dotenv
 dotenv.load_dotenv()
@@ -9,7 +13,8 @@ from langchain_community.embeddings import BedrockEmbeddings, OpenAIEmbeddings, 
 from utils.model_utils import get_huggingface_model_path
 
 class EmbeddingProvider(str, Enum):
-    """
+    """! @brief 支持的嵌入提供方标识。
+
     嵌入提供商枚举类，定义支持的嵌入模型提供商
     """
     OPENAI = "openai"
@@ -17,7 +22,8 @@ class EmbeddingProvider(str, Enum):
     HUGGINGFACE = "huggingface"
 
 class EmbeddingConfig:
-    """
+    """! @brief 单个嵌入模型的运行时配置。
+
     嵌入配置类，用于存储嵌入模型的配置信息
     """
     def __init__(self, provider: str, model_name: str):
@@ -33,7 +39,8 @@ class EmbeddingConfig:
         self.aws_region = "ap-southeast-1"  # 可配置
 
 class EmbeddingService:
-    """
+    """! @brief 创建、保存和查看文档嵌入。
+
     嵌入服务类，提供创建和管理文本嵌入的功能
     """
     def __init__(self):
@@ -41,7 +48,11 @@ class EmbeddingService:
         self.embedding_factory = EmbeddingFactory()
 
     def create_embeddings(self, input_data: dict, config: EmbeddingConfig) -> tuple:
-        """
+        """! @brief 创建文本块的嵌入向量并返回必要的信息.
+        @param input_data 包含 chunks 和 metadata 的输入数据字典。
+        @param config 嵌入配置对象。
+        @return (embeddings, metadata) 元组；当前 metadata 为空字典。
+
         创建文本块的嵌入向量并返回必要的信息
         
         参数:
@@ -150,7 +161,7 @@ class EmbeddingService:
         # 从第一个embedding中获取配置信息
         config_info = {
             "filename": base_name,  # 使用完整的文件名（包括.pdf）
-            "chunked_doc_name": doc_name,  # Add chunked_doc_name
+            "chunked_doc_name": doc_name,  # 添加 chunked_doc_name
             "created_at": datetime.now().isoformat(),
             "embedding_provider": provider,
             "embedding_model": first_embedding["metadata"]["embedding_model"],

@@ -1,7 +1,15 @@
+/**
+ * @file ChunkFile.jsx
+ * @brief 已读入文档分块工作流页面。
+ */
 import React, { useState, useEffect } from 'react';
 import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
 
+/**
+ * @brief 渲染已读入文档分块和分块集合查看控件。
+ * @returns {JSX.Element} 分块工作流页面。
+ */
 const ChunkFile = () => {
   const [loadedDocuments, setLoadedDocuments] = useState([]);
   const [selectedDoc, setSelectedDoc] = useState('');
@@ -268,7 +276,7 @@ const ChunkFile = () => {
       <h2 className="text-2xl font-bold mb-6">知识分块</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Panel */}
+        {/* 左侧面板 */}
         <div className="col-span-3 space-y-4">
           <div className="p-4 border rounded-lg bg-white shadow-sm">
             <div className="mb-4">
@@ -333,7 +341,7 @@ const ChunkFile = () => {
           )}
         </div>
 
-        {/* Right Panel */}
+        {/* 右侧面板 */}
         <div className="col-span-9 border rounded-lg bg-white shadow-sm">
           {renderRightPanel()}
         </div>

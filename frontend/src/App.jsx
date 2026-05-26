@@ -1,4 +1,8 @@
-// src/App.jsx
+// 文件路径：src/App.jsx
+/**
+ * @file App.jsx
+ * @brief RAG 演示前端的顶层 React 路由。
+ */
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
@@ -10,6 +14,10 @@ import Search from './pages/Search';
 import ParseFile from './pages/ParseFile';
 import Generation from './pages/Generation';
 
+/**
+ * @brief 渲染带固定侧边栏导航的应用外壳。
+ * @returns {JSX.Element} 单页应用路由布局。
+ */
 const App = () => {
   return (
     <Router>

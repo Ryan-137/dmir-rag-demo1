@@ -1,10 +1,15 @@
+"""! @file config.py
+@brief 后端共享配置常量和枚举。
+"""
+
 from enum import Enum
 from typing import Dict, Any
 
 class VectorDBProvider(str, Enum):
+    """! @brief 支持的向量数据库提供方标识。"""
     MILVUS = "milvus",
     CHROMA = "chroma"
-    # More providers can be added later
+    # 后续可继续添加更多提供方
 
 # 可以在这里添加其他配置相关的内容
 MILVUS_CONFIG = {
@@ -24,4 +29,4 @@ MILVUS_CONFIG = {
             "efConstruction": 500
         }
     }
-} 
+}

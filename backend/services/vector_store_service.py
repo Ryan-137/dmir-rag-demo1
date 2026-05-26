@@ -1,3 +1,7 @@
+"""! @file vector_store_service.py
+@brief 向量存储索引和集合管理。
+"""
+
 import os
 from datetime import datetime
 import json
@@ -6,7 +10,7 @@ import logging
 from pathlib import Path
 from pymilvus import connections, utility
 from pymilvus import Collection, DataType, FieldSchema, CollectionSchema
-from utils.config import VectorDBProvider, MILVUS_CONFIG  # Updated import
+from utils.config import VectorDBProvider, MILVUS_CONFIG  # 更新后的导入
 from pypinyin import lazy_pinyin, Style
 from pymilvus import MilvusClient, exceptions
 import chromadb
@@ -17,7 +21,10 @@ chromadb_path = "./03-vector-store/chromadb"
 logger = logging.getLogger(__name__)
 
 def clean_filename(file_name: str) -> str:
-    """
+    """! @brief 将文件名转换为 Chroma/Milvus 可用的集合名前缀。
+    @param file_name 面向用户的原始文件名。
+    @return 清理后的名称，以字母开头并以字母或数字结尾。
+
     清理文件名，满足以下要求：
     1. 仅保留[a-zA-Z0-9._-]和中文字符，其余字符替换为下划线
     2. 确保文件名以[a-zA-Z0-9]开头和结尾
@@ -57,7 +64,8 @@ def clean_filename(file_name: str) -> str:
 
 
 class VectorDBConfig:
-    """
+    """! @brief 向量数据库提供方和索引模式配置。
+
     向量数据库配置类，用于存储和管理向量数据库的配置信息
     """
 
@@ -109,7 +117,8 @@ class VectorDBConfig:
 
 
 class VectorStoreService:
-    """
+    """! @brief 索引嵌入 JSON 文件并管理向量集合。
+
     向量存储服务类，提供向量数据的索引、查询和管理功能
     """
 
@@ -226,18 +235,18 @@ class VectorStoreService:
             # 如果有 .pdf 后缀，移除它
             base_name = filename.replace('.pdf', '') if filename else "doc"
 
-            # Convert Chinese characters to pinyin
+            # 将中文字符转换为拼音
             base_name = ''.join(lazy_pinyin(base_name, style=Style.NORMAL))
 
-            # Replace hyphens with underscores in the base name
+            # 将基础名称中的连字符替换为下划线
             base_name = base_name.replace('-', '_')
             base_name = base_name.replace(' ', '_')
 
-            # Ensure the collection name starts with a letter or underscore
+            # 确保集合名以字母或下划线开头
             if not base_name[0].isalpha() and base_name[0] != '_':
                 base_name = f"_{base_name}"
 
-            # Get embedding provider
+            # 获取嵌入提供方
             embedding_provider = embeddings_data.get("embedding_provider", "unknown")
             timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
             collection_name = f"{base_name}_{embedding_provider}_{timestamp}"
@@ -382,14 +391,14 @@ class VectorStoreService:
             # 如果有 .pdf 后缀，移除它
             base_name = filename.replace('.pdf', '') if filename else "doc"
 
-            # Convert Chinese characters to pinyin
+            # 将中文字符转换为拼音
             base_name = ''.join(lazy_pinyin(base_name, style=Style.NORMAL))
 
-            # Replace hyphens with underscores in the base name
+            # 将基础名称中的连字符替换为下划线
             base_name = clean_filename(base_name)
             logger.info(f"Filename: {base_name}")
 
-            # Get embedding provider
+            # 获取嵌入提供方
             embedding_provider = embeddings_data.get("embedding_provider", "unknown")
             timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
             collection_name = f"{base_name}_{embedding_provider}_{timestamp}"

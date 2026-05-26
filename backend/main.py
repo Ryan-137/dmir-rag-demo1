@@ -1,3 +1,9 @@
+"""! @file main.py
+@brief RAG 演示后端的 FastAPI 入口。
+@details 本模块串联文档读入、解析、分块、嵌入、向量索引、检索、评估与回答生成服务。
+端点处理函数保持轻量，领域逻辑委托给 service 层。
+"""
+
 import os
 import json
 from datetime import datetime
@@ -21,6 +27,7 @@ from typing import List, Dict, Optional
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+## @brief 由 Uvicorn 提供服务的后端应用对象。
 app = FastAPI()
 
 # 确保必要的目录存在
@@ -28,7 +35,7 @@ os.makedirs("temp", exist_ok=True)
 os.makedirs("01-chunked-docs", exist_ok=True)
 os.makedirs("02-embedded-docs", exist_ok=True)
 
-# Configure CORS
+# 配置跨域访问
 app.add_middleware(
     CORSMiddleware,
     # allow_origins=["*"],
@@ -38,6 +45,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+## @brief 供生成端点复用的共享生成服务实例。
 generation_service = GenerationService()
 
 @app.post("/process")
@@ -47,6 +55,13 @@ async def process_file(
     chunking_option: str = Form(...),
     chunk_size: int = Form(1000)
 ):
+    """! @brief 在一次请求中读入并分块上传的 PDF。
+    @param file 上传的 PDF 文件。
+    @param loading_method 读入后端，例如 pymupdf、pypdf 或 unstructured。
+    @param chunking_option 分块策略名称。
+    @param chunk_size 固定大小分块的最大块长度。
+    @return 包含分块文档数据的 JSON 对象。
+    """
     try:
         # 保存上传的文件
         temp_path = os.path.join("temp", file.filename)
@@ -88,6 +103,10 @@ async def process_file(
 
 @app.post("/save")
 async def save_chunks(data: dict):
+    """! @brief 持久化手动提交的分块文档。
+    @param data 请求体，包含 docName、chunks 和可选 metadata。
+    @return 保存状态和相对文件路径。
+    """
     try:
         doc_name = data.get("docName")
         chunks = data.get("chunks")
@@ -124,6 +143,9 @@ async def save_chunks(data: dict):
 
 @app.get("/list-docs")
 async def list_documents():
+    """! @brief 列出已保存的分块文档。
+    @return 01-chunked-docs 中的文档标识和显示名称。
+    """
     try:
         docs = []
         docs_dir = "01-chunked-docs"
@@ -143,6 +165,10 @@ async def list_documents():
 
 @app.post("/embed")
 async def embed_document(data: dict = Body(...)):
+    """! @brief 为已读入或已分块的文档创建嵌入。
+    @param data 请求体，包含 documentId、provider 和 model。
+    @return 嵌入数据和持久化 JSON 路径。
+    """
     try:
         doc_id = data.get("documentId")
         provider = data.get("provider")
@@ -202,7 +228,9 @@ async def embed_document(data: dict = Body(...)):
 
 @app.get("/list-embedded")
 async def list_embedded_docs():
-    """List all embedded documents"""
+    """! @brief 列出所有已嵌入的文档。
+    @return 02-embedded-docs 中的嵌入文档元数据。
+    """
     try:
         documents = []
         embedded_dir = "02-embedded-docs"
@@ -243,6 +271,10 @@ async def list_embedded_docs():
 
 @app.post("/index")
 async def index_embeddings(data: dict):
+    """! @brief 将嵌入文件写入配置的向量库索引。
+    @param data 请求体，包含 fileId、vectorDb 和 indexMode。
+    @return 向量库索引结果摘要。
+    """
     try:
         file_id = data.get("fileId")
         vector_db = data.get("vectorDb")
@@ -269,7 +301,7 @@ async def index_embeddings(data: dict):
 
 @app.get("/providers")
 async def get_providers():
-    """获取支持的向量数据库列表"""
+    """! @brief 获取支持的向量数据库列表."""
     try:
         search_service = SearchService()
         providers = search_service.get_providers()
@@ -286,7 +318,7 @@ async def get_collections(
    # provider: VectorDBProvider = Query(default=VectorDBProvider.MILVUS)
     provider: VectorDBProvider = Query(default=VectorDBProvider.CHROMA)
 ):
-    """获取指定向量数据库中的集合"""
+    """! @brief 获取指定向量数据库中的集合."""
     try:
         search_service = SearchService()
         collections = search_service.list_collections(provider.value)
@@ -306,14 +338,16 @@ async def search(
     threshold: float = Body(0.7),
     word_count_threshold: int = Body(100)
 ):
-    """执行向量搜索"""
+    """! @brief 执行向量搜索.
+    @return 包装在 results 对象中的搜索结果。
+    """
     try:
-        # Log the incoming search request details
+        # 记录传入的搜索请求详情
         logger.info(f"Search request - Query: {query}, Collection: {collection_id}, Top K: {top_k}, Threshold: {threshold}, Word Count Threshold: {word_count_threshold}")
         
         search_service = SearchService()
         
-        # Log before calling the search function
+        # 调用搜索函数前记录日志
         logger.info("Calling search service...")
         
         results = await search_service.search(
@@ -324,7 +358,7 @@ async def search(
             word_count_threshold=word_count_threshold
         )
         
-        # Log the search results
+        # 记录搜索结果
         logger.info(f"Search response: {results}")
         
         return {"results": results}
@@ -337,7 +371,7 @@ async def search(
 
 @app.get("/collections/{provider}")
 async def get_provider_collections(provider: str):
-    """Get collections for a specific vector database provider"""
+    """! @brief 获取指定向量数据库提供方的集合列表。"""
     try:
         vector_store_service = VectorStoreService()
         collections = vector_store_service.list_collections(provider)
@@ -351,7 +385,7 @@ async def get_provider_collections(provider: str):
 
 @app.get("/collections/{provider}/{collection_name}")
 async def get_collection_info(provider: str, collection_name: str):
-    """Get detailed information about a specific collection"""
+    """! @brief 获取指定集合的详细信息。"""
     try:
         vector_store_service = VectorStoreService()
         info = vector_store_service.get_collection_info(provider, collection_name)
@@ -365,7 +399,7 @@ async def get_collection_info(provider: str, collection_name: str):
 
 @app.delete("/collections/{provider}/{collection_name}")
 async def delete_collection(provider: str, collection_name: str):
-    """Delete a specific collection"""
+    """! @brief 删除指定集合。"""
     try:
         vector_store_service = VectorStoreService()
         success = vector_store_service.delete_collection(provider, collection_name)
@@ -385,6 +419,10 @@ async def delete_collection(provider: str, collection_name: str):
 
 @app.get("/documents")
 async def get_documents(type: str = Query("all")):
+    """! @brief 列出已读入和/或已分块的文档。
+    @param type 可选 all、loaded 或 chunked。
+    @return 按持久化存储类型归类的文档摘要。
+    """
     try:
         documents = []
         
@@ -432,6 +470,11 @@ async def get_documents(type: str = Query("all")):
 
 @app.get("/documents/{doc_name}")
 async def get_document(doc_name: str, type: str = Query("loaded")):
+    """! @brief 读取已持久化的读入文档或分块文档。
+    @param doc_name JSON 文件名或基础文档名。
+    @param type 存储分组，可选 loaded 或 chunked。
+    @return 完整文档 JSON 数据。
+    """
     try:
 
         base_name = doc_name.replace('.json', '')
@@ -459,6 +502,11 @@ async def get_document(doc_name: str, type: str = Query("loaded")):
 
 @app.delete("/documents/{doc_name}")
 async def delete_document(doc_name: str, type: str = Query("loaded")):
+    """! @brief 删除已持久化的读入文档或分块文档。
+    @param doc_name JSON 文件名或基础文档名。
+    @param type 存储分组，可选 loaded 或 chunked。
+    @return 删除状态。
+    """
     try:
         # 移除已有的 .json 扩展名（如果有）然后添加一个
         base_name = doc_name.replace('.json', '')
@@ -489,7 +537,7 @@ async def delete_document(doc_name: str, type: str = Query("loaded")):
 
 @app.get("/embedded-docs/{doc_name}")
 async def get_embedded_doc(doc_name: str):
-    """Get specific embedded document"""
+    """! @brief 获取指定的嵌入文档。"""
     try:
         logger.info(f"Attempting to read document: {doc_name}")
         file_path = os.path.join("02-embedded-docs", doc_name)
@@ -534,7 +582,7 @@ async def get_embedded_doc(doc_name: str):
 
 @app.delete("/embedded-docs/{doc_name}")
 async def delete_embedded_doc(doc_name: str):
-    """Delete specific embedded document"""
+    """! @brief 删除指定的嵌入文档。"""
     try:
         file_path = os.path.join("02-embedded-docs", doc_name)
         if not os.path.exists(file_path):
@@ -555,14 +603,20 @@ async def parse_file(
     loading_method: str = Form(...),
     parsing_option: str = Form(...)
 ):
+    """! @brief 解析上传的 PDF，但不持久化结果。
+    @param file 上传的 PDF 文件。
+    @param loading_method 读入后端。
+    @param parsing_option 解析策略。
+    @return 解析后的内容结构。
+    """
     try:
-        # Save uploaded file
+        # 保存上传文件
         temp_path = os.path.join("temp", file.filename)
         with open(temp_path, "wb") as buffer:
             content = await file.read()
             buffer.write(content)
         
-        # Prepare metadata
+        # 准备元数据
         metadata = {
             "filename": file.filename,
             "loading_method": loading_method,
@@ -585,7 +639,7 @@ async def parse_file(
             page_map=page_map
         )
         
-        # Clean up temp file
+        # 清理临时文件
         os.remove(temp_path)
         
         return {"parsed_content": parsed_content}
@@ -601,6 +655,14 @@ async def load_file(
     chunking_strategy: str = Form(None),
     chunking_options: str = Form(None)
 ):
+    """! @brief 读入上传的 PDF，并持久化页级块。
+    @param file 上传的 PDF 文件。
+    @param loading_method 读入后端。
+    @param strategy 可选的 unstructured 读入策略。
+    @param chunking_strategy 可选的 unstructured 分块策略。
+    @param chunking_options JSON 编码的 unstructured 分块选项。
+    @return 读入后的文档数据和持久化 JSON 路径。
+    """
     try:
         # 保存上传的文件
         temp_path = os.path.join("temp", file.filename)
@@ -619,7 +681,7 @@ async def load_file(
             "timestamp": datetime.now().isoformat()
         }
         
-        # Parse chunking options if provided
+        # 如有提供则解析分块选项
         chunking_options_dict = None
         if chunking_options:
             chunking_options_dict = json.loads(chunking_options)
@@ -679,6 +741,10 @@ async def load_file(
 
 @app.post("/chunk")
 async def chunk_document(data: dict = Body(...)):
+    """! @brief 对已读入文档重新分块。
+    @param data 请求体，包含 doc_id、chunking_option 和可选 chunk_size。
+    @return 分块后的文档数据。
+    """
     try:
         doc_id = data.get("doc_id")
         chunking_option = data.get("chunking_option")
@@ -747,6 +813,13 @@ async def evaluate_search(
     top_k: int = Form(10),
     threshold: float = Form(0.7)
 ):
+    """! @brief 使用带标签 CSV 文件评估检索质量。
+    @param file CSV 文件，其中 LABEL 列包含期望命中的页码。
+    @param collection_id 要搜索的向量集合。
+    @param top_k 参与评分的搜索命中数量。
+    @param threshold 相似度阈值。
+    @return 单条查询得分和聚合平均值。
+    """
     try:
         # 读取CSV文件
         df = pd.read_csv(file.file)
@@ -877,6 +950,10 @@ async def evaluate_search(
     
 @app.post("/save-search")
 async def save_search_results(request: Request):
+    """! @brief 持久化搜索结果，供后续生成使用。
+    @param request JSON 请求，包含 query、collection_id 和 results。
+    @return 持久化后的搜索结果路径。
+    """
     try:
         data = await request.json()
         query = data.get("query")
@@ -897,7 +974,7 @@ async def save_search_results(request: Request):
 
 @app.get("/generation/models")
 async def get_generation_models():
-    """获取可用的生成模型列表"""
+    """! @brief 获取可用的生成模型列表."""
     try:
         generation_service = GenerationService()
         models = generation_service.get_available_models()
@@ -915,7 +992,9 @@ async def generate_response(
     load_model: bool = Body(...),
     api_key: Optional[str] = Body(None)
 ):
-    """生成回答"""
+    """! @brief 基于查询和检索上下文生成最终回答。
+    @return 生成回答和持久化结果路径。
+    """
     try:
         result = generation_service.generate(
             provider=provider,
@@ -932,7 +1011,7 @@ async def generate_response(
 
 @app.get("/search-results")
 async def list_search_results():
-    """获取所有搜索结果文件列表"""
+    """! @brief 获取所有搜索结果文件列表."""
     try:
         search_results_dir = "04-search-results"
         if not os.path.exists(search_results_dir):
@@ -960,7 +1039,7 @@ async def list_search_results():
 
 @app.get("/search-results/{file_id}")
 async def get_search_result(file_id: str):
-    """获取特定搜索结果文件的内容"""
+    """! @brief 获取特定搜索结果文件的内容."""
     try:
         file_path = os.path.join("04-search-results", file_id)
         if not os.path.exists(file_path):
@@ -972,4 +1051,4 @@ async def get_search_result(file_id: str):
             
     except Exception as e:
         logger.error(f"Error reading search result file: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e)) 
+        raise HTTPException(status_code=500, detail=str(e))

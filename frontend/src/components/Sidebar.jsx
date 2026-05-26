@@ -1,8 +1,16 @@
-// src/components/Sidebar.jsx
+// 文件路径：src/components/Sidebar.jsx
+/**
+ * @file Sidebar.jsx
+ * @brief RAG 工作流的固定导航侧边栏。
+ */
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ragLogo from '../assets/raglogo.png'
 
+/**
+ * @brief 渲染路由链接并高亮当前工作流步骤。
+ * @returns {JSX.Element} 侧边栏导航。
+ */
 const Sidebar = () => {
   const location = useLocation();
   const links = [

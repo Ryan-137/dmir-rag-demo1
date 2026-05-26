@@ -1,3 +1,7 @@
+"""! @file search_service.py
+@brief 向量集合发现、语义检索和搜索结果持久化。
+"""
+
 from typing import List, Dict, Any, Optional
 import logging
 from datetime import datetime
@@ -15,7 +19,8 @@ logger = logging.getLogger(__name__)
 
 
 class SearchService:
-    """
+    """! @brief 查询向量集合并持久化检索结果。
+
     搜索服务类，负责向量数据库的连接和向量搜索功能
     提供集合列表查询、向量相似度搜索和搜索结果保存等功能
     """
@@ -35,7 +40,7 @@ class SearchService:
         """
         获取支持的向量数据库列表
 
-        Returns:
+        返回:
             List[Dict[str, str]]: 支持的向量数据库提供商列表
         """
         return [
@@ -47,13 +52,13 @@ class SearchService:
         """
         获取指定向量数据库中的所有集合
 
-        Args:
+        参数:
             provider (str): 向量数据库提供商，默认为Milvus
 
-        Returns:
+        返回:
             List[Dict[str, Any]]: 集合信息列表，包含id、名称和实体数量
 
-        Raises:
+        异常:
             Exception: 连接或查询集合时发生错误
         """
         try:
@@ -93,15 +98,15 @@ class SearchService:
         """
         保存搜索结果到JSON文件
 
-        Args:
+        参数:
             query (str): 搜索查询文本
             collection_id (str): 集合ID
             results (List[Dict[str, Any]]): 搜索结果列表
 
-        Returns:
+        返回:
             str: 保存文件的路径
 
-        Raises:
+        异常:
             Exception: 保存文件时发生错误
         """
         try:
@@ -137,10 +142,18 @@ class SearchService:
                      threshold: float = 0.7,
                      word_count_threshold: int = 20,
                      save_results: bool = False) -> Dict[str, Any]:
-        """
+        """! @brief 执行向量搜索，并可选择持久化结果。
+        @param query 用户查询文本。
+        @param collection_id 向量库中的集合标识。
+        @param top_k 返回的最大命中数量。
+        @param threshold 保留结果的最低相似度分数。
+        @param word_count_threshold 为保持 API 兼容而保留的最小字数过滤阈值。
+        @param save_results 是否持久化处理后的搜索命中。
+        @return 包含处理后结果和可选 saved_filepath 的搜索响应。
+
         执行向量搜索
 
-        Args:
+        参数:
             query (str): 搜索查询文本
             collection_id (str): 要搜索的集合ID
             top_k (int): 返回的最大结果数量，默认为3
@@ -148,10 +161,10 @@ class SearchService:
             word_count_threshold (int): 文本字数阈值，低于此值的结果将被过滤，默认为20
             save_results (bool): 是否保存搜索结果，默认为False
 
-        Returns:
+        返回:
             Dict[str, Any]: 包含搜索结果的字典，如果保存结果则包含保存路径
 
-        Raises:
+        异常:
             Exception: 搜索过程中发生错误
         """
         try:

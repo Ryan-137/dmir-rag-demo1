@@ -1,8 +1,16 @@
-// src/pages/LoadFile.jsx
+// 文件路径：src/pages/LoadFile.jsx
+/**
+ * @file LoadFile.jsx
+ * @brief PDF 读入和已读入文档管理页面。
+ */
 import React, { useState, useEffect } from 'react';
 import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
 
+/**
+ * @brief 渲染 PDF 上传、读入和已读入文档管理控件。
+ * @returns {JSX.Element} 文档读入工作流页面。
+ */
 const LoadFile = () => {
   const [file, setFile] = useState(null);
   const [loadingMethod, setLoadingMethod] = useState('pymupdf');
@@ -234,7 +242,7 @@ const LoadFile = () => {
       <h2 className="text-2xl font-bold mb-6">文档导入</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Panel */}
+        {/* 左侧面板 */}
         <div className="col-span-3 space-y-4">
           <div className="p-4 border rounded-lg bg-white shadow-sm">
             <div>
@@ -401,7 +409,7 @@ const LoadFile = () => {
           )}
         </div>
 
-        {/* Right Panel */}
+        {/* 右侧面板 */}
         <div className="col-span-9 border rounded-lg bg-white shadow-sm">
           {renderRightPanel()}
         </div>

@@ -1,0 +1,43 @@
+# DMIR RAG 演示项目的 Doxygen 配置。
+# 运行方式：./scripts/generate_docs.sh
+
+PROJECT_NAME           = "DMIR RAG Demo"
+PROJECT_BRIEF          = "轻量级文档读入、分块、嵌入、索引、检索与生成演示"
+OUTPUT_DIRECTORY       = build/doxygen
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = Chinese
+
+INPUT                  = backend frontend/src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.py *.js *.jsx *.md
+EXCLUDE                = backend/tests backend/services/archive frontend/node_modules frontend/dist
+EXCLUDE_PATTERNS       = */__pycache__/* */node_modules/* */dist/*
+EXTENSION_MAPPING      = jsx=JavaScript
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = YES
+MULTILINE_CPP_IS_BRIEF = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+GENERATE_XML           = NO
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+WARNINGS               = YES
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+WARN_AS_ERROR          = NO

@@ -1,7 +1,15 @@
+/**
+ * @file ParseFile.jsx
+ * @brief 单次 PDF 解析工作流页面。
+ */
 import React, { useState } from 'react';
 import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
 
+/**
+ * @brief 渲染上传 PDF 的临时解析控件，不持久化解析结果。
+ * @returns {JSX.Element} 解析工作流页面。
+ */
 const ParseFile = () => {
   const [file, setFile] = useState(null);
   const [loadingMethod, setLoadingMethod] = useState('pymupdf');
@@ -62,7 +70,7 @@ const ParseFile = () => {
       <h2 className="text-2xl font-bold mb-6">文件解析</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Panel (3/12) */}
+        {/* 左侧面板（3/12） */}
         <div className="col-span-3 space-y-4">
           <div className="p-4 border rounded-lg bg-white shadow-sm">
             <div>
@@ -114,7 +122,7 @@ const ParseFile = () => {
           </div>
         </div>
 
-        {/* Right Panel (9/12) */}
+        {/* 右侧面板（9/12） */}
         <div className="col-span-9 border rounded-lg bg-white shadow-sm">
           {parsedContent ? (
             <div className="p-4">
@@ -154,4 +162,4 @@ const ParseFile = () => {
   );
 };
 
-export default ParseFile; 
+export default ParseFile;

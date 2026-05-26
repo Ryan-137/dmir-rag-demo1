@@ -1,0 +1,35 @@
+from langchain_community.document_loaders import TextLoader
+from langchain_text_splitters import CharacterTextSplitter
+import chardet
+
+def load_txt(file_path): #以二进制模式读取，自动诊断编码格式
+    with open(file_path,'rb') as f:
+        raw_data = f.read()
+        result = chardet.detect(raw_data)
+        encoding = result['encoding']
+        confidence = result['confidence']
+        if confidence < 0.7: #设置兜底编码
+            encoding ='utf-8'
+        loader = TextLoader(file_path, encoding=encoding)
+    f.close()
+    return loader.load()
+
+file_path="...txt"
+
+documents = load_txt(file_path)   #Document对象
+page_content=documents[0].page_content
+
+
+text_splitter = CharacterTextSplitter( # 设置分块器
+    chunk_size=1000,  # 每个文本块的大小
+    chunk_overlap=200,  # 文本块之间重叠部分
+)
+chunks = text_splitter.split_documents(documents)
+
+print(f"{len(chunks)}块")
+print("\n=== 文档分块结果 ===")
+for i, chunk in enumerate(chunks, 1):
+    print(f"\n--- 第 {i} 个文档块 ---")
+    print(f"内容: {chunk.page_content}")
+    print(f"元数据: {chunk.metadata}")
+    print("-" * 50)

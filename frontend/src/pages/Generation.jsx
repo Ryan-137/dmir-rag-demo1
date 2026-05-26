@@ -1,3 +1,7 @@
+/**
+ * @file Generation.jsx
+ * @brief 响应生成工作流页面。
+ */
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import RandomImage from '../components/RandomImage';
@@ -5,6 +9,11 @@ import { apiBaseUrl } from '../config/config';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+/**
+ * @brief 渲染生成提供方返回的 Markdown 内容。
+ * @param {{markdownText: string}} props 组件属性。
+ * @returns {JSX.Element} Markdown 渲染后的响应内容。
+ */
 const MarkdownViewer = ({ markdownText }) => {
   return (
     <div className="markdown-container">
@@ -14,6 +23,10 @@ const MarkdownViewer = ({ markdownText }) => {
 };
 
 
+/**
+ * @brief 渲染回答生成控件和检索上下文预览。
+ * @returns {JSX.Element} 生成工作流页面。
+ */
 const Generation = () => {
   const location = useLocation();
   const [provider, setProvider] = useState('');
@@ -138,7 +151,7 @@ const Generation = () => {
       <h2 className="text-2xl font-bold mb-6">响应生成</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Panel - Generation Controls */}
+        {/* 左侧面板：生成控件 */}
         <div className="col-span-4 space-y-4">
           <div className="p-4 border rounded-lg bg-white shadow-sm">
             <div className="space-y-4">
@@ -253,11 +266,11 @@ const Generation = () => {
           </div>
         </div>
 
-        {/* Right Panel - Context and Response */}
+        {/* 右侧面板：上下文和回答 */}
         <div className="col-span-8">
           {selectedFile ? (
             <>
-              {/* Search Results Context */}
+              {/* 搜索结果上下文 */}
               <div className="mb-6 p-4 border rounded-lg bg-white shadow-sm">
                 <h3 className="text-xl font-semibold mb-4">检索的上下文</h3>
                 <div className="space-y-4 max-h-[300px] overflow-y-auto">
@@ -283,7 +296,7 @@ const Generation = () => {
                 <h3 className="text-xl font-semibold mb-4">无检索上下文</h3>
             </div>
           )}
-              {/* Generated Response */}
+              {/* 生成回答 */}
               {response && (
                 <div className="p-4 border rounded-lg bg-white shadow-sm">
                   <h3 className="text-xl font-semibold mb-4">生成的回答</h3>
@@ -298,4 +311,4 @@ const Generation = () => {
   );
 };
 
-export default Generation; 
+export default Generation;

@@ -1,3 +1,7 @@
+"""! @file chunking_service.py
+@brief 嵌入和索引前使用的文本分块策略。
+"""
+
 from datetime import datetime
 import logging
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -5,7 +9,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 logger = logging.getLogger(__name__)
 
 class ChunkingService:
-    """
+    """! @brief 将带页面映射的文本切分为可检索的文本块。
+
     文本分块服务，提供多种文本分块策略
     
     该服务支持以下分块方法：
@@ -16,21 +21,29 @@ class ChunkingService:
     """
     
     def chunk_text(self, text: str, method: str, metadata: dict, page_map: list = None, chunk_size: int = 1000) -> dict:
-        """
+        """! @brief 将文本按指定方法分块.
+        @param text 原始文本内容；当 page_map 存在时主要保留兼容用途。
+        @param method 分块方法，支持 by_pages、fixed_size、by_paragraphs、by_sentences。
+        @param metadata 文档元数据。
+        @param page_map 页面映射列表，每个元素包含页码和页面文本。
+        @param chunk_size 固定大小分块时的块大小。
+        @return 包含分块结果的标准化文档数据结构。
+        @throws ValueError 当分块方法不支持或页面映射为空时抛出。
+
         将文本按指定方法分块
         
-        Args:
+        参数:
             text: 原始文本内容
             method: 分块方法，支持 'by_pages', 'fixed_size', 'by_paragraphs', 'by_sentences'
             metadata: 文档元数据
             page_map: 页面映射列表，每个元素包含页码和页面文本
             chunk_size: 固定大小分块时的块大小
             
-        Returns:
+        返回:
             包含分块结果的文档数据结构
         
-        Raises:
-            ValueError: 当分块方法不支持或页面映射为空时
+        异常:
+            ValueError: 当分块方法不支持或页面映射为空时抛出
         """
         try:
             if not page_map:
@@ -109,11 +122,11 @@ class ChunkingService:
         """
         将文本按固定大小分块
         
-        Args:
+        参数:
             text: 要分块的文本
             chunk_size: 每块的最大字符数
             
-        Returns:
+        返回:
             分块后的文本列表
         """
         chunks = []
@@ -139,10 +152,10 @@ class ChunkingService:
         """
         将文本按段落分块
         
-        Args:
+        参数:
             text: 要分块的文本
             
-        Returns:
+        返回:
             分块后的段落列表
         """
         paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
@@ -152,10 +165,10 @@ class ChunkingService:
         """
         将文本按句子分块
         
-        Args:
+        参数:
             text: 要分块的文本
             
-        Returns:
+        返回:
             分块后的句子列表
         """
         splitter = RecursiveCharacterTextSplitter(

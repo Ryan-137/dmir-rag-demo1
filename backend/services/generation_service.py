@@ -1,3 +1,7 @@
+"""! @file generation_service.py
+@brief 面向本地和托管大模型提供方的回答生成服务。
+"""
+
 import os
 import json
 from datetime import datetime
@@ -21,7 +25,8 @@ logger = logging.getLogger(__name__)
 
 
 class GenerationService:
-    """
+    """! @brief 基于查询和检索上下文生成最终回答。
+
     生成服务类：负责调用不同的模型提供商（HuggingFace、OpenAI、DeepSeek）生成回答
     支持本地模型和API调用，并将生成结果保存到文件
     """
@@ -320,7 +325,16 @@ AI回复：{responseInfo}
             api_key: Optional[str] = None,
             show_reasoning: bool = True,
     ) -> Dict:
-        """
+        """! @brief 生成回答并持久化生成结果。
+        @param provider 模型提供方，例如 huggingface、aliyun 或 deepseek。
+        @param model_name 提供方内部的模型键。
+        @param query 用户问题。
+        @param search_results 检索到的上下文列表。
+        @param load_model 调用前是否需要加载本地模型。
+        @param api_key 托管提供方的可选 API 密钥。
+        @param show_reasoning 支持时是否包含推理输出。
+        @return 回答文本和保存文件路径。
+
         生成回答并保存结果
 
         参数:

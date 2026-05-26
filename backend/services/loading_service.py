@@ -1,7 +1,11 @@
+"""! @file loading_service.py
+@brief 支持多种解析后端的 PDF 读入和页面提取服务。
+"""
+
 from pypdf import PdfReader
 from unstructured.partition.pdf import partition_pdf
 import pdfplumber
-import fitz  # PyMuPDF
+import fitz  # PyMuPDF 库
 import logging
 import os
 from datetime import datetime
@@ -25,7 +29,8 @@ PDF文档加载服务类
         - 支持不同的加载策略（使用unstructured时）
  """
 class LoadingService:
-    """
+    """! @brief 读入 PDF 文件，并暴露页级文本映射。
+
     PDF文档加载服务类，提供多种PDF文档加载和处理方法。
     
     属性:
@@ -38,7 +43,15 @@ class LoadingService:
         self.current_page_map = []
     
     def load_pdf(self, file_path: str, method: str, strategy: str = None, chunking_strategy: str = None, chunking_options: dict = None) -> str:
-        """
+        """! @brief 加载PDF文档的主方法，支持多种加载策略.
+        @param file_path PDF 文件路径。
+        @param method 加载方法，支持 pymupdf、pypdf、pdfplumber、unstructured。
+        @param strategy unstructured 方法的可选策略。
+        @param chunking_strategy unstructured 方法的可选分块策略。
+        @param chunking_options unstructured 分块选项。
+        @return 提取出的全文文本。
+        @throws ValueError 当加载方法不支持时抛出。
+
         加载PDF文档的主方法，支持多种加载策略。
 
         参数:
@@ -167,7 +180,7 @@ class LoadingService:
                 "ocr_only": {"strategy": "ocr_only"}
             }            
          
-            # Prepare chunking parameters based on strategy
+            # 根据策略准备分块参数
             chunking_params = {}
             if chunking_strategy == "basic":
                 chunking_params = {
@@ -184,12 +197,12 @@ class LoadingService:
                     "multipage_sections": chunking_options.get("multiPageSections", False)
                 }
             
-            # Combine strategy parameters with chunking parameters
+            # 合并读入策略参数和分块参数
             params = {**strategy_params.get(strategy, {"strategy": "fast"}), **chunking_params}
             
             elements = partition_pdf(file_path, **params)
             
-            # Add debug logging
+            # 添加调试日志
             for elem in elements:
                 logger.debug(f"Element type: {type(elem)}")
                 logger.debug(f"Element content: {str(elem)}")
@@ -205,21 +218,21 @@ class LoadingService:
                 if page_number is not None:
                     pages.add(page_number)
                     
-                    # Convert element to a serializable format
+                    # 将元素转换为可序列化格式
                     cleaned_metadata = {}
                     for key, value in metadata.items():
                         if key == '_known_field_names':
                             continue
                         
                         try:
-                            # Try JSON serialization to test if value is serializable
+                            # 尝试 JSON 序列化以判断值是否可序列化
                             json.dumps({key: value})
                             cleaned_metadata[key] = value
                         except (TypeError, OverflowError):
-                            # If not serializable, convert to string
+                            # 不可序列化时转换为字符串
                             cleaned_metadata[key] = str(value)
                     
-                    # Add additional element information
+                    # 添加额外的元素信息
                     cleaned_metadata['element_type'] = elem.__class__.__name__
                     cleaned_metadata['id'] = str(getattr(elem, 'id', None))
                     cleaned_metadata['category'] = str(getattr(elem, 'category', None))
@@ -285,7 +298,7 @@ class LoadingService:
             timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
             base_name = filename.replace('.pdf', '').split('_')[0]
             
-            # Adjust the document name to include strategy if unstructured
+            # 使用 unstructured 时，在文档名中加入策略信息
             if loading_method == "unstructured" and strategy:
                 doc_name = f"{base_name}_{loading_method}_{strategy}_{chunking_strategy}_{timestamp}"
             else:

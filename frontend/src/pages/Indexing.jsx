@@ -1,8 +1,16 @@
-// src/pages/Indexing.jsx
+// 文件路径：src/pages/Indexing.jsx
+/**
+ * @file Indexing.jsx
+ * @brief 向量数据库索引和集合管理页面。
+ */
 import React, { useState, useEffect } from 'react';
 import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
 
+/**
+ * @brief 渲染嵌入索引和集合查看控件。
+ * @returns {JSX.Element} 向量索引工作流页面。
+ */
 const Indexing = () => {
   const [embeddingFile, setEmbeddingFile] = useState('');
   //const [vectorDb, setVectorDb] = useState('milvus');
@@ -187,10 +195,10 @@ const Indexing = () => {
       <h2 className="text-2xl font-bold mb-6">向量库索引</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Panel - Controls */}
+        {/* 左侧面板：控制区 */}
         <div className="col-span-3">
           <div className="p-4 border rounded-lg bg-white shadow-sm space-y-4">
-            {/* Embedding File Selection */}
+            {/* 嵌入文件选择 */}
             <div>
               <label className="block text-sm font-medium mb-1">需要索引的文件</label>
               <select
@@ -207,7 +215,7 @@ const Indexing = () => {
               </select>
             </div>
 
-            {/* Vector Database Selection */}
+            {/* 向量数据库选择 */}
             <div>
               <label className="block text-sm font-medium mb-1">向量库</label>
               <select
@@ -223,7 +231,7 @@ const Indexing = () => {
               </select>
             </div>
 
-            {/* Index Mode Selection */}
+            {/* 索引模式选择 */}
             <div>
               <label className="block text-sm font-medium mb-1">索引模式</label>
               <select
@@ -239,9 +247,9 @@ const Indexing = () => {
               </select>
             </div>
 
-            {/* Action Buttons and Collection Management */}
+            {/* 操作按钮和集合管理 */}
             <div className="space-y-2">
-              {/* Index Data Button */}
+              {/* 数据索引按钮 */}
               <button 
                 onClick={handleIndex}
                 className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-blue-300"
@@ -250,7 +258,7 @@ const Indexing = () => {
                 索引数据
               </button>
 
-              {/* Collection Selection */}
+              {/* 集合选择 */}
               <div>
                 <label className="block text-sm font-medium mb-1">索引集合</label>
                 <select
@@ -267,7 +275,7 @@ const Indexing = () => {
                 </select>
               </div>
 
-              {/* Display Collection Button */}
+              {/* 集合显示按钮 */}
               <button
                 onClick={() => handleDisplay(selectedCollection)}
                 disabled={!selectedCollection}
@@ -276,7 +284,7 @@ const Indexing = () => {
                 显示集合
               </button>
 
-              {/* Delete Collection Button */}
+              {/* 集合删除按钮 */}
               <button
                 onClick={() => handleDelete(selectedCollection)}
                 disabled={!selectedCollection}
@@ -294,7 +302,7 @@ const Indexing = () => {
           </div>
         </div>
 
-        {/* Right Panel - Results */}
+        {/* 右侧面板：结果 */}
         <div className="col-span-9 border rounded-lg bg-white shadow-sm">
           {indexingResult ? (
             <div className="p-4">
