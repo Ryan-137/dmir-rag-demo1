@@ -1,0 +1,15 @@
+[run]
+branch = false
+source =
+    backend
+omit =
+    backend/services/archive/*
+    backend/__pycache__/*
+    backend/tests/*
+    .venv/*
+
+[report]
+show_missing = true
+skip_covered = false
+precision = 2
+fail_under = 90.5
