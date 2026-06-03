@@ -28,11 +28,12 @@
 3. citation 格式必须来自 `RagAnswer.citations`，不得自造前端私有格式。
 4. 单元测试不得依赖真实 API、网络或模型下载。
 5. 代码注释必须使用中文 Doxygen 风格。
+6. 第一阶段 prompt 只允许使用 `sample_data/course_qa_public.json` 检索到的证据；不得读取 `answer_quality` 标签。
 
 ## 实施顺序
 
 1. 读取 #1 的 `Generator` Protocol、`RagRequest`、`RagAnswer`、`Citation` contract。
-2. 实现中文 grounded prompt：要求模型只基于给定证据回答，并在缺证据时拒答。
+2. 实现中文 grounded prompt：要求模型只基于课程 QA 检索证据回答，并在缺证据时拒答。
 3. 实现 `QwenApiGenerator` 和 `QwenLocalGenerator` 的 adapter skeleton。
 4. 实现 query rewrite、context packing、citation formatting 的纯函数，并为它们写 unit tests。
 5. 使用 mock provider 测试 `answer_markdown`、`citations`、`warnings`、`trace`。

@@ -1,6 +1,6 @@
-# Issue #7 Agent 指示：QA/evidence dataset and evaluation report
+# Issue #7 Agent 指示：Course QA evaluation report
 
-你正在为 RAG Demo 项目完成 GitHub Issue #7。目标是准备目标新论文、干扰论文、QA/evidence 标注和三模式评测报告。
+你正在为 RAG Demo 项目完成 GitHub Issue #7。第一阶段目标不是找新论文，而是基于老师要求的课程 QA 数据实现三模式评测报告。
 
 ## Owner
 
@@ -23,18 +23,20 @@
 ## 硬性限制
 
 1. 不得把临场手工结果伪装成自动评测结果。
-2. 大 PDF 或大型 corpus 不要直接提交主仓库；优先提交 metadata、下载脚本和小 sample。
-3. 评测问题必须能区分 LLM-only 与 RAG，不要设计常识题。
+2. RAG 默认输入只能使用 `sample_data/course_qa_public.json`。
+3. `answer_quality` 只能从 `eval/labels/course_qa_quality_labels.json` 在生成后读取，禁止进入索引、prompt、trace 或前端展示。
 4. 输出报告不得包含 API key、绝对路径、个人隐私。
 5. 文档、评测说明和展示问题尽量使用中文。
+6. 新论文和干扰论文属于后续扩展，本 Issue 第一阶段不要求寻找论文。
 
 ## 实施顺序
 
-1. 选择目标新论文和 20-50 篇相关干扰论文的 metadata。
-2. 准备 20-30 个 QA/evidence，覆盖专有概念、方法对比、指标、实验结果。
-3. 设计至少 5 个现场稳定展示问题。
+1. 读取 `sample_data/course_qa_public.json` 作为系统可见输入。
+2. 读取 `eval/labels/course_qa_quality_labels.json` 作为评测专用隐藏标签。
+3. 设计至少 5 个课程 QA 现场稳定展示问题。
 4. 实现 `run_eval.py` 的 mock/small 模式，输出 JSON/CSV/Markdown。
-5. 三模式指标至少包含 correctness、citation_hit、groundedness、latency。
+5. 三模式指标至少包含 citation_hit、label_distribution、groundedness、latency。
+6. 写测试确认 `answer_quality` 不会出现在 RAG 请求、检索命中、trace 或前端展示数据中。
 
 ## 验收命令
 
@@ -46,7 +48,7 @@ python scripts/run_eval.py --modes all --limit 5
 
 PR 中必须写明：
 
-- 数据集来源与体积。
-- QA/evidence 格式。
+- 课程 QA public 输入与隐藏 labels 的隔离方式。
+- 评测 JSON/CSV/Markdown 格式。
 - 5 个现场问题。
 - 指标定义和小样例结果。

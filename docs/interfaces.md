@@ -31,6 +31,23 @@ pytest tests/contract
 python scripts/run_smoke_pipeline.py --mode fake --pretty
 ```
 
+## 默认测试数据
+
+第一阶段默认输入不是论文语料，而是老师要求的课程 QA 数据：
+
+- RAG 可见输入：`sample_data/course_qa_public.json`
+- 评测专用标签：`eval/labels/course_qa_quality_labels.json`
+
+`course_qa_public.json` 只包含课程主题、问题、候选答案和不含语义的 `answer_id`。候选答案顺序已稳定打散，不包含 0-9 质量档次。
+
+`course_qa_quality_labels.json` 只允许评测脚本在模型生成完成后读取。禁止把 `answer_quality` 放进：
+
+- RAG 索引
+- LLM prompt
+- `RagAnswer.retrieved_hits`
+- `RagAnswer.trace`
+- 前端展示字段
+
 ## 核心模型
 
 | 模型 | 作用 | 必须字段/约束 |

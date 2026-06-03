@@ -26,6 +26,7 @@
 2. 不要重写全站，优先扩展现有页面和组件。
 3. 文案尽量中文，展示字段名可以保留必要英文术语。
 4. 涉及前端改动必须通过 `npm run build`。
+5. 前端不得展示 `answer_quality`，也不得假设后端会返回质量档次。
 
 ## 实施顺序
 
@@ -34,7 +35,7 @@
 3. 新增 `RetrievalTracePanel`，展示 `retrieved_hits`、score、rank、source。
 4. 新增 `PipelineConfigPanel`，配置 rag_mode、top_k、provider/model。
 5. 新增 `EvaluationDashboard`，展示 LLM-only / Basic RAG / Optimized RAG 三模式指标。
-6. 使用 mock `RagAnswer` 做前端渲染验证。
+6. 使用课程 QA mock `RagAnswer` 做前端渲染验证，并确认没有 `answer_quality` 字段。
 
 ## 验收命令
 

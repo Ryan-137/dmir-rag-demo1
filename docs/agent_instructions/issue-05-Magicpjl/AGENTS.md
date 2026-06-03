@@ -32,10 +32,11 @@
 ## 实施顺序
 
 1. 读取 #1 的 `DocumentParser`、`Chunker` Protocol。
-2. 先实现 PDF->Markdown 或轻量 Markdown parser 的 skeleton。
-3. 实现 `research_paper_chunker`，优先按 section/table/caption 保留结构。
-4. 用小样例 PDF 或 Markdown fixture 写 contract tests。
-5. 对复杂版式/OCR 标记可选路线，不作为普通 PR 的硬依赖。
+2. 第一阶段默认数据是 `sample_data/course_qa_public.json`，PDF/论文解析不得阻塞默认 QA 流水线。
+3. 再实现 PDF->Markdown 或轻量 Markdown parser 的 skeleton。
+4. 实现 `research_paper_chunker`，优先按 section/table/caption 保留结构。
+5. 用小样例 PDF 或 Markdown fixture 写 contract tests。
+6. 对复杂版式/OCR 标记可选路线，不作为普通 PR 的硬依赖。
 
 ## 验收命令
 

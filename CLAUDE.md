@@ -14,5 +14,7 @@
 - 面向 LLM 的 prompt、mock 输出、展示文案尽量使用中文。
 - 单元测试不得依赖真实网络、真实 API、真实模型下载。
 - 不得删除 fake/mock fallback。
+- 第一阶段默认测试数据是 `sample_data/course_qa_public.json`。
+- `answer_quality` 档次只能由评测脚本读取，禁止进入 RAG 索引、prompt、trace 或前端展示。
 
 完成后必须运行对应 Issue 的验收命令，并在 PR 中列出修改文件、测试结果和风险点。

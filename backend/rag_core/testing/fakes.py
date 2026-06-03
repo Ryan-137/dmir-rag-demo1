@@ -106,6 +106,15 @@ class MockChunker:
             text = block.text.strip()
             if not text:
                 continue
+            metadata = dict(block.metadata)
+            metadata.update(
+                {
+                    "page_numbers": [block.page_number] if block.page_number else [],
+                    "section_path": [document.title] if document.title else [],
+                    "block_type": block.block_type.value,
+                    "parser_name": document.parser_name,
+                }
+            )
             chunks.append(
                 Chunk(
                     chunk_id=stable_id("chunk", document.doc_id, block.block_id, index),
@@ -115,12 +124,7 @@ class MockChunker:
                     block_ids=[block.block_id],
                     block_types=[block.block_type],
                     token_count=max(1, len(tokenize(text))),
-                    metadata={
-                        "page_numbers": [block.page_number] if block.page_number else [],
-                        "section_path": [document.title] if document.title else [],
-                        "block_type": block.block_type.value,
-                        "parser_name": document.parser_name,
-                    },
+                    metadata=metadata,
                 )
             )
         if not chunks:
@@ -213,9 +217,12 @@ class NumpyFlatIndex:
         if self._dim != query_embedding.dim:
             raise VectorDimensionMismatch("Query dimension does not match index dimension")
 
+        query_text = str(query_embedding.metadata.get("query", "")).strip()
         scored = []
         for chunk_id, embedding in self._embeddings.items():
-            scored.append((cosine_similarity(query_embedding.vector, embedding.vector), self._chunks[chunk_id]))
+            chunk = self._chunks[chunk_id]
+            lexical_bonus = 1.0 if query_text and query_text in chunk.text else 0.0
+            scored.append((cosine_similarity(query_embedding.vector, embedding.vector) + lexical_bonus, chunk))
         scored.sort(key=lambda item: item[0], reverse=True)
 
         hits: list[SearchHit] = []
@@ -245,7 +252,7 @@ class MockGenerator:
         citations: list[Citation] = []
 
         if request.rag_mode == RagMode.LLM_ONLY:
-            answer = "## 纯模型模拟回答\n\n该模式刻意不使用检索证据，因此无法核验新论文中的细节。"
+            answer = "## 纯模型模拟回答\n\n该模式刻意不使用检索证据，因此无法核验课程 QA 参考证据。"
             warnings.append("纯模型模式没有检索证据")
         elif not contexts:
             answer = "## 无法生成有证据支撑的回答\n\n没有检索到相关证据，因此模拟生成器拒绝回答。"

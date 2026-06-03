@@ -30,13 +30,14 @@
 4. `/rag/answer` 输出必须是 `RagAnswer` 或其序列化形式。
 5. 代码注释必须使用中文 Doxygen 风格。
 6. 面向 LLM 的 prompt 和现场展示文案尽量使用中文。
+7. 第一阶段固定 demo 数据为 `sample_data/course_qa_public.json`；`answer_quality` 只能在评测脚本生成报告时读取。
 
 ## 实施顺序
 
 1. 确认 #1 fake pipeline 可运行。
 2. 汇总 parser、embedding、index、generation、frontend、eval 各模块 PR。
 3. 统一 `/rag/answer` 输入输出。
-4. 固定 demo 数据、索引、模型 provider、top_k 和 5 个现场问题。
+4. 固定课程 QA demo 数据、索引、模型 provider、top_k 和 5 个现场问题。
 5. 生成最终评测表、截图、录屏和离线 fallback。
 6. 展示前锁定 main，只合并 P0/P1 bugfix。
 

@@ -1,0 +1,7208 @@
+{
+  "dataset": "course_qa_quality_labels",
+  "version": "0.1.0",
+  "visibility": "evaluation_only_do_not_index",
+  "description": "课程 QA 答案质量标签，只允许评测脚本在生成完成后读取，禁止进入 RAG 索引、prompt、trace 或前端展示。",
+  "labels": [
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-d3df1a51e4f1",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-ae3886612812",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-cb5d37ef8857",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-dafb79775845",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-ed75ae4769d3",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-ff15d97bdd55",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-8ec9ac8f2957",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-0a9bcb0c8610",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-53fcdf050c42",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-7b5423e407a3",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-1c785c032995",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-bccc6b7eb379",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-25863a5ede49",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-e5931f03ce1d",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-2758d4baac32",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-d5eebd7ced31",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-718ac2368aeb",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-cda62c174477",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-1f1e0e4c8c35",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-893010fbe017",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-1750a1fa369f",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-c381ef9752ff",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-528b9831f39c",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-321ab3b3c2e0",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-43241ad7660a",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-42be05603848",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-323c9afa9616",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-250b2ffb0878",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-748c22e8a531",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-58c1ba2a4a1c",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-6ea59f11ebfe",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-d2f0ed5a1a85",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-acb7af3ea6af",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-aacb02c95fea",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-7d95d7847e67",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-338b8ea0b329",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-49d8dd90888f",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-ea157bb07adc",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-24cce1c42fde",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-babd51d2dea4",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-49ce88ff8ab8",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-8adee4bab87a",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-488d0227027b",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-d05524cc104e",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-eabb126166df",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-ad20aa97910b",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-84724c6c9013",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-f6273d053023",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-fa0631a4ba5f",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-2b26268ee619",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-b4a6596e8263",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-e6da6791742e",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-c994b4db974c",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-f5f34c5809b7",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-ae2db72f37ef",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-36c4faa2d7d6",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-093d33e25cc5",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-2c0d810494b7",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-724cffa7a3b2",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-9b393b86679f",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-3b42b343248d",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-3a9d0feebeed",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-a40b61ee8a04",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-17f9a22f9eb4",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-95b49fe51fc9",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-34276488b7f2",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-1491c2bd425d",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-9f6046208e3e",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-e085bcbf2444",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-0eec41da0ea0",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-782c82d2cc21",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-1c46e204b52a",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-b57ed030a1fa",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-06116f9cf2bd",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-e391a04fab37",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-712151e24a61",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-7a524e4e7f0f",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-924da1da12d3",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-2d29230b411c",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-6aa97b2ed44c",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-ed7ef6c554b7",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-37de85b78dee",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-e3ccb508334d",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-4c5922c5af71",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-b7a50ad80df5",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-4d14433b77bb",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-fefeae750b74",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-1b4a5e82d0e7",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-6fba02687056",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-522d3fdbf236",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-dc2938aad415",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-94bc4c8c1484",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-5a8532fb2ef3",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-9b5b993ee1d7",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-0a59014e3db6",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-d6193858ab0a",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-5e9b029b8c67",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-31437e31c42a",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-506e639236c0",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-42c083551aac",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-9b106ede5c24",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-f81ca2bcc777",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-ae6450c62028",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-32218c826270",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-1a6db9581e4b",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-495374ab7156",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-dca275d07356",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-d28b7a63896b",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-b546055be16f",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-83fb215961bd",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-280ca32c7db6",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-78dc85ce0b0b",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-827aceed5bf1",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-c2c883c912f5",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-f6ae78b66090",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-5917794f1f3f",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-7f6364719342",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-9e1461ae203f",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-f4686adafbd2",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-e39acc122926",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-e5c80819df09",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-7b9e06a4b59f",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-7dc4aa17db67",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-980f833782e1",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-3065d89b36cc",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-ec8e4d2d9602",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-e7e9bbc8ff8d",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-ba5d70b88d43",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-e9170453c9ad",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-c0871aa34006",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-f8546ff061b7",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-332de4f0be7a",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-705d9745888a",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-8fb946b795be",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-42080735f482",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-9366624c9c49",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-f25fd7175b36",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-e33a888835f1",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-47608f8f4037",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-eae3a2b71697",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-ba31765d0492",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-e72a5dd6da63",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-52167a34cc6a",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-ca5874a09943",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-e842c313224b",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-05cccbd7f757",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-5f4f5af675a6",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-8d128269152f",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-04c5edaf5737",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-8282e30b4f61",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-b152db5b1882",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-64a78a60590c",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-77aca0be1a9d",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-47eee644334e",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-73c8fa1b4ce5",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-e4d054f0f57f",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-c22b67b1a08d",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-b1bd61bc021f",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-6614934a5ff8",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-96ae047f9b86",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-ed9939da5309",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-a0b18d6ac4fb",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-950a1b08fbd1",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-9bf100224f4e",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-abbd19bb28a9",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-36962bc9c0de",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-2f15a7d65523",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-f698270b61b9",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-f0589b60cd1e",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-a6b9cb9708f6",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-27f06ae2b6f4",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-7c3644ddbc03",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-76a57ef6ba8c",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-29b1eb58be5d",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-f78d7909367e",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-12831cee2b2d",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-cd2cf31b858e",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-5f6327c69f39",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-dfdba52e4e53",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-5da83e360e7f",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-6c4e59ed9e2e",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-3eba7b0ca694",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-a86c47317997",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-6b49ab6851af",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-defa42b06943",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-ef7adf0f2f70",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-406d42e5fcd6",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-e10d3cc16d4f",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-c12c0c59e617",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-51216aadc7f9",
+      "answer_quality": 9
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-fc7d1a609845",
+      "answer_quality": 0
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-f3e0d74969b2",
+      "answer_quality": 1
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-fea0cab4c28c",
+      "answer_quality": 2
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-2bdec89283bc",
+      "answer_quality": 3
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-12e76ed6e221",
+      "answer_quality": 4
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-fbf971ba5aee",
+      "answer_quality": 5
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-f9bbb7e42f69",
+      "answer_quality": 6
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-ae6a18df0b8e",
+      "answer_quality": 7
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-84e434906d15",
+      "answer_quality": 8
+    },
+    {
+      "category": "自然语言处理课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-fa44c9483179",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-9a3fc34cae98",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-50e1780b83c4",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-89ac9dd868a0",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-43e69262e69d",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-9a64d869ad97",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-6e237ced21bf",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-2dc8c45b6a78",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-94b6d260e010",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-88ff93a5fcfe",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-bac89271a325",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-8dead0d526f2",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-c0e8029ea52d",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-cb3830e2a77c",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-fcd66f4add62",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-aea42d60af79",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-75fd550be722",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-47abe5900d59",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-82aeaeb3edf5",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-aca203c04695",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-23318189579d",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-61acbe3e4aab",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-8e33ef0118c9",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-5b74c93baa17",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-e9851ba4eaf0",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-421a589a7941",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-0242117f50e7",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-5d5a46724f3c",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-e45231514293",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-8ca26d832c38",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-2306efee4d93",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-14c7f5b0d259",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-d873892287ff",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-8ff9e1c9ed6a",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-05aceb6687df",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-770ae39ce6d8",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-3c1121ad773a",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-6fa5bcfe4274",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-0bcdb2118980",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-9fe6552a3c55",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-7752c04b96d0",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-4ad4e8e889da",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-a8bd8baef922",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-439ad01e8848",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-37c141e218d1",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-3cfedf7baca7",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-e5e288d1b9bc",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-46a884e549c1",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-ad9f3897f8ee",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-41e415d39ad1",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-979645153302",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-71c43449f6e9",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-a0c7994dc0f6",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-738ec958ec99",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-db4a01241bac",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-513702acfb1b",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-d804a1c97c4a",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-a7f4b59bbe34",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-0b63e4679999",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-adf43ca847df",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-033f1e2e5cfe",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-7ae596a5f67c",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-a3bac90bd400",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-7814bea3ecd7",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-1b8665caf9ee",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-b9e1ae0af53e",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-cefd1b3a89ec",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-9c167df57c17",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-6a5166e84c4d",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-dae7b4a8e43b",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-69d2a423d6f1",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-a6c61130f956",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-f4a0169cfb19",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-2e995b6762a5",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-e5aea3995748",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-42b0fc2b3f56",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-aee331b1cb21",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-f1217976b139",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-e443c0a41c75",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-a765df36e326",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-03753059c343",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-5d603863a697",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-e83c97184fc8",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-14d9f6555ea0",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-d1bd7739ec01",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-3f0acfb034de",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-77cfaa4c0287",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-4144cbb17606",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-2dc0a0081840",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-16ac4587e910",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-bded2842b888",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-6f3084f11ea7",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-93d83bc44fbe",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-33c7520299b6",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-a2adaf414ece",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-3650891a8b87",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-ee9aac1cb170",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-a86a71c13a03",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-8192a2fdfcc1",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-21b0ecf7ec03",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-c93222d28d0a",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-bcbb341594be",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-6508e02d3ff1",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-5b8f0e979c0d",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-d6d7fa590421",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-d4bd2fc6f2e9",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-4fd5e19e8a09",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-a7237aa0137d",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-57e27e0965ec",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-8e5deacb0214",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-9331a5b016ce",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-615fbb7ba50e",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-f13b43864639",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-575e6e907eda",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-dee9b3e9ecc7",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-e9a5cf47858f",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-4b0c58ba29c1",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-1b569a050490",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-9e6b217227b7",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-2c4409bd2e57",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-1e1df9d2cc63",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-356247296b31",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-571989653c13",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-bb7d0cdde96d",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-5fa2bfa89da2",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-ab8b5f8f6847",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-7e5f089d3c17",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-5fc06895cb63",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-52c6652c37d0",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-61f8f20431d7",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-96796c50de2c",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-82b1102abf22",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-266987e4ffea",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-edd1d2d18445",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-ae4a37b2d169",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-6db80e15ab68",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-a9a8a4b6d4fe",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-7be92003e81c",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-73a0851aba82",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-ec3d4c315f2d",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-c7871c13077c",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-db2928dcd710",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-fc28006dd595",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-b2fe44d1ef0c",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-02166fa973fa",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-d4b3be2f94da",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-c93488dadd52",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-e9f342a1f16d",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-9e1affd5f222",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-2ed8b6415f99",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-e948aacb87e0",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-d01e3349c08a",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-c0dc69000e3e",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-6bcf0f76e6c5",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-8afe2c91d12d",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-558fb0c3f486",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-bb7bf3cb8c01",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-d55c855e8c77",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-2d76069cc2dd",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-0ad499ccf8f8",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-cf2d154b51a9",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-43648d19205b",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-c96f7587ac35",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-ce1e5504453c",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-24af097bf66e",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-5b4b8972434a",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-fc0c3415bde0",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-72b0b05269de",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-53901aa57ee0",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-d1f1557ee0c0",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-57b25138ed47",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-f0545e59f80a",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-7fc1b0c9e571",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-c325c1227d6f",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-6c1fc1ec92bf",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-5c39bfd7604a",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-116e75a36fba",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-5e48446219e6",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-897644078eaf",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-75569685607e",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-dee81ee6633d",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-f83b7624906c",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-0ef317b274b1",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-e434373eb924",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-d060905c215c",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-6c48b109efcf",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-566d0317cc4f",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-98a18e971403",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-cbb0047d86dc",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-4aed7b1938ae",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-368dc830288d",
+      "answer_quality": 9
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-fd2076c23994",
+      "answer_quality": 0
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-46faad9c7c1e",
+      "answer_quality": 1
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-4bd764a2f54d",
+      "answer_quality": 2
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-00d45bb80bcd",
+      "answer_quality": 3
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-c0135ce5d4da",
+      "answer_quality": 4
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-85a8425ace00",
+      "answer_quality": 5
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-cda1e216c98b",
+      "answer_quality": 6
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-6c300cc25ed8",
+      "answer_quality": 7
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-01b1adc196d5",
+      "answer_quality": 8
+    },
+    {
+      "category": "神经网络核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-ccbd7b155952",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-c321f4c35e11",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-d14b5138b03e",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-754cd21e5f0f",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-870254240955",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-9c8274078a00",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-f51335375e7d",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-f8424c7f1371",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-1b1b6d730562",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-342e6975b383",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 1,
+      "answer_id": "ans-ecc07097d7c8",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-09a79114bd0a",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-b5c656a16bad",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-61917dc46d5d",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-d8c2df89f3c7",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-e41823102a69",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-60ffe0126201",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-427b6482968d",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-8581deda77d4",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-082cf1a3fbf3",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 2,
+      "answer_id": "ans-170c8b7d256c",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-fdb438031d43",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-37250b3b39e1",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-5cc4e4464ace",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-560d050ecbac",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-e769047e0321",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-8faef29ee483",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-5def5f0acb57",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-280bc70ad8b4",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-9c38159d46d9",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 3,
+      "answer_id": "ans-ed84e7e3b90e",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-2d405426771d",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-06148a66a276",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-590bc55dfc68",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-efaa39e312f0",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-d637fa506c21",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-d2879281445e",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-4bb288157bb7",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-b0a05b178ee2",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-5a0e4a323dd1",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 4,
+      "answer_id": "ans-386e8c862f2b",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-0cd0e17ccfc1",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-6e07fc32d610",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-9cb5e3a3c36f",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-3fc14173376a",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-6a766e3335a0",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-f70acb92da2c",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-4ead3ed672f3",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-933ceaabd6e9",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-45670f065d37",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 5,
+      "answer_id": "ans-4e7050b2ef64",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-689bcce1a575",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-29a6eaefc954",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-1ea1ee2dec77",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-c508b585b9c1",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-8d96f31f4b8f",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-6c4bdbeb7edd",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-c7f1bfde0c4f",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-73758d79eef5",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-d2222074e55f",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 6,
+      "answer_id": "ans-245c2853a101",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-56ebec99b988",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-dc7575243b70",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-ef437767dda1",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-7b8070b4c8c8",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-6b93d5252be4",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-fb6ab60363bf",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-002979b1ad81",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-f244894241ea",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-4d473af7960d",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 7,
+      "answer_id": "ans-f2afeff6bec8",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-ef2477cc8b0a",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-6e6aa91fc3ef",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-82a905c89f6f",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-70812f054468",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-e6730117c6f3",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-ad733c6e80d9",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-8acc8875f76b",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-2284c6b0b304",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-ebc3838e9f2c",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 8,
+      "answer_id": "ans-a29061f23644",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-23e2f4e7fbd5",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-8bb35a494c85",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-82cc85f01d52",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-565049946b6a",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-7c5dfe231617",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-4edcc57cad48",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-7890bce582a6",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-a744c1336c93",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-119a6175205c",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 9,
+      "answer_id": "ans-38a8ddca0614",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-7bed024acea9",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-f417c58e4628",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-2ea87ce7d5e6",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-40538485ddaa",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-0d03c0e488ac",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-260adee9b1a2",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-9f7ff689d01f",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-2bda0fe8f554",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-5a30cd820759",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 10,
+      "answer_id": "ans-c4b106860f24",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-c1f5ff6a271e",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-e81d70fdedc6",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-585d80a19a02",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-2495cc346300",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-875d88bcf8db",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-60d541129163",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-6244769a77bd",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-7454b91c322f",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-110c36f7407f",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 11,
+      "answer_id": "ans-a47a983a3062",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-cd6982038d85",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-0ce9e74fd83e",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-9483ada99f88",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-ddc8d25038e5",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-d3bd2a4dba81",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-9dd730d4d20d",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-3d19ea6f5555",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-0436ef69aae3",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-cc12caf5d80b",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 12,
+      "answer_id": "ans-7276fd4e24d2",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-65de28bd6d42",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-99b194430b98",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-6244b8bd7ba1",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-1719060a2e0e",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-f92bc8e74953",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-8abba03c5256",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-9d7a46c0bd73",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-3cf471c38762",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-62bdb9fbb202",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 13,
+      "answer_id": "ans-f80ce02e09d9",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-d956b347141c",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-11350919384c",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-9ff66b404b79",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-f9451c856dca",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-0236702492e3",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-21833130f8b0",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-20c0a152f7d1",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-30da826bf026",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-02341531fcb9",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 14,
+      "answer_id": "ans-3aa82b56e229",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-334d63081b22",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-46b8c19fcb40",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-87921c397832",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-00522008137c",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-1a448a3e9903",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-be353bdcc576",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-b062db1c56f7",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-cc1694e864e0",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-e833f13decce",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 15,
+      "answer_id": "ans-2a358e0a3da6",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-d9764283890a",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-d627664fea70",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-d1e1185d4cc0",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-27cb42fa3105",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-8b6526cfae1e",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-635627a8a834",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-b8311b2af90e",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-7af4e384a345",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-8782b70c0115",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 16,
+      "answer_id": "ans-e46bcbf6ad72",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-fe598bbb170a",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-6bb72f716def",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-c9cdfa71f3b3",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-f4a0dd89dcb2",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-03d46528f4a0",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-0d0f96fee390",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-6ced8c6420d9",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-b68654dd8cf1",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-4591d1288d9a",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 17,
+      "answer_id": "ans-2e4012abb96f",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-43ebf27eacdc",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-db8577538403",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-85bd900a5b53",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-7bb146f2bd9f",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-ddb75c30534b",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-1b92bfb028de",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-1ef7c4d29a23",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-e27a53bd71f7",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-4aae3b5a4cc4",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 18,
+      "answer_id": "ans-20eaee79128f",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-ad2b77f61a2a",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-569b91b40e2f",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-d41922db6bb0",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-9794e5bad47b",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-498adfe184d2",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-f6674ff05a17",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-c6962507ff4b",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-3f2e9e478cd8",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-b502cc5d98e7",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 19,
+      "answer_id": "ans-18ed0ffdec08",
+      "answer_quality": 9
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-27a378d29035",
+      "answer_quality": 0
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-677f2f76ab86",
+      "answer_quality": 1
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-8b3ed1ca0678",
+      "answer_quality": 2
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-2e67374c6306",
+      "answer_quality": 3
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-71e1c742bb1d",
+      "answer_quality": 4
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-81e484941908",
+      "answer_quality": 5
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-749dbdb69973",
+      "answer_quality": 6
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-dcfa20714307",
+      "answer_quality": 7
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-e8638260fff1",
+      "answer_quality": 8
+    },
+    {
+      "category": "机器学习核心问答",
+      "qa_id": 20,
+      "answer_id": "ans-75a537863bce",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-6ea86695a2c6",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-f32a39ef8b22",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-35ba0782a67e",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-a8dc92b24421",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-5ec9b95a5278",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-50c45af8bb5b",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-6abedc0c54bd",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-58e9c773173a",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-badc0031a428",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 1,
+      "answer_id": "ans-7fe968c4ee92",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-c97d402a1065",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-842c0c39112a",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-d1ca46285037",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-3da19f7e2d30",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-2711469be8c3",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-ec296aae3aee",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-c83ef3829a0d",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-b9901071f01e",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-111672bdf392",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 2,
+      "answer_id": "ans-514d319547ac",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-e6cce85b1740",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-11b0fe21510b",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-8a2e26f9241a",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-ca727fdae9bd",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-2e0393b87381",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-2bf12b5528c9",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-d1a041978051",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-9430ee03f107",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-c60b0852fc27",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 3,
+      "answer_id": "ans-28ac409ceb95",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-4ca82e94d371",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-a69a9c573751",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-4b46683703ff",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-929a1c03535d",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-48d8232c0440",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-aa02503414ee",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-02e6591a1e6a",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-47f2a40538e6",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-c3de16cf415e",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 4,
+      "answer_id": "ans-481b18935e4f",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-1924e290eb98",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-8fafad971d14",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-0e0536faa919",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-aa1312b72b57",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-8acc53eb4522",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-c032abbba22e",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-888cd9ced9bc",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-eac65f4dbb44",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-c7e51c7f3f4b",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 5,
+      "answer_id": "ans-292bb66fad1c",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-69e33f348f18",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-ff3f991141aa",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-7f970a568f0b",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-8bc2490373f8",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-f7e32c42ab00",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-4f663ea2b43e",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-0f7008570db0",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-6e5883692060",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-a11991354d55",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 6,
+      "answer_id": "ans-4d8cb1c0c31f",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-f5ca31413c31",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-9d9cb485f7e4",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-e4e82d61dd94",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-9871bb0a587e",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-b57294ddb424",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-428bbe894b61",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-e92f3d8fd5e2",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-6d0bc44e4a48",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-fd5e3c574c1d",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 7,
+      "answer_id": "ans-97bbdd345335",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-5656386456e7",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-7f4c65534ae8",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-26d7f808ff68",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-7a522241575d",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-373ddbe78bc9",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-5ec0dbbb4949",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-99300fc425ba",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-fa10c617b40c",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-3cc7b1e87a3e",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 8,
+      "answer_id": "ans-e4d63319cbd4",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-660cacc8ca78",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-e7073573a651",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-2aa3f77a263d",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-95880fdb4866",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-0183ba652815",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-359c29bbb639",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-8f6cb4b2fe2e",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-b08f7b0622f4",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-b6d0cac2181e",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 9,
+      "answer_id": "ans-caaa1f97edf3",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-fe562a7877bd",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-8c08cbdf957c",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-0e0a702315bf",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-62d8f5c5cad5",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-dce815406dfc",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-a30de5670a9c",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-d42b9c3a823b",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-603a2cc28d05",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-c7503b9efb9c",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 10,
+      "answer_id": "ans-cfaa6ec801b2",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-c80b5584a89b",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-e1694aa058bd",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-3e8248152821",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-9b8615f38705",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-a906f003bf8a",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-b5ad87779d75",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-62bc65765afb",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-5d0b11ad3e26",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-11b6e0c5d065",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 11,
+      "answer_id": "ans-ea076713b711",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-eb45beebcdfe",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-2ddf4d2f1e9e",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-56894fe0f61b",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-dd2bf15be04c",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-6e9451005b88",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-9a2789157b00",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-8d0be010595c",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-0cb6c1bae306",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-1981caf1cf70",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 12,
+      "answer_id": "ans-3281e5d0c03c",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-2591140952b0",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-b7813b0e2ca5",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-c1ed66213035",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-cc18cdee2280",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-0df3d34d2b59",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-a5bb95f148b7",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-373caf5a0cfb",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-cc73ef9d238f",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-11220fd8070b",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 13,
+      "answer_id": "ans-ddef2b8ebf27",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-f63cd2110888",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-3b424754c60b",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-ee29bb36edaa",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-a9bdc96baf95",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-22ff8a1de3a0",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-5c4c45658857",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-6f9858676803",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-c43384082dec",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-1ca825d1b6d8",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 14,
+      "answer_id": "ans-54a42c08dcaa",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-09f606df16a5",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-5f28b2eb60f2",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-bfa2b459152b",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-d81f32d24305",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-672a4cd18f2c",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-a68667158874",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-40ce518791d6",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-fd01f350683c",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-a195a783d31d",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 15,
+      "answer_id": "ans-c06b62b35032",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-d9fa3d350777",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-3df32f8858f7",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-e353ec0016f4",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-e20936c2d6dc",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-a1c468244661",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-a45f26c65395",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-9271059c6f1d",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-6791356615c6",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-29d60f57e557",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 16,
+      "answer_id": "ans-bf11563dcc45",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-e3e77a00a5be",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-baebad25a1a3",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-d8f16d0ef542",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-0c7569a326c8",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-558aded4e87e",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-230ff4b4c114",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-10045f6faedd",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-ce1c23bc2e1f",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-4885a1c00ba3",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 17,
+      "answer_id": "ans-fb1378c90570",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-e39622c46c3a",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-1f4fd11f702f",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-d185b75ef277",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-5c08bad1aba2",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-3858d43d8e9e",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-9382dee19823",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-773484a0474a",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-a3a2cd92ae5f",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-43dcc79fcc05",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 18,
+      "answer_id": "ans-7fb2cc29c270",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-75610e5588de",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-c09eef48286b",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-69f12d48b9a0",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-3103724d8346",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-db36e90a2e08",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-407c72d0c61d",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-409b4f0ebbff",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-412caf1f7dfc",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-26b5e2ecd9f8",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 19,
+      "answer_id": "ans-cce2736913df",
+      "answer_quality": 9
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-707df41204a6",
+      "answer_quality": 0
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-df589bb5d082",
+      "answer_quality": 1
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-19b560ed2766",
+      "answer_quality": 2
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-3bc10ef06bf0",
+      "answer_quality": 3
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-546381782ad6",
+      "answer_quality": 4
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-01a55cb17c16",
+      "answer_quality": 5
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-b370b2ef30a9",
+      "answer_quality": 6
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-96fe3e6c1631",
+      "answer_quality": 7
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-ca74efd926b1",
+      "answer_quality": 8
+    },
+    {
+      "category": "日常生活",
+      "qa_id": 20,
+      "answer_id": "ans-36457a4793de",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-2a74462430dd",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-7254724e9bc1",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-12bb784936e0",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-ee9581994477",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-b42a03f583e6",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-cb4c16b78e25",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-d2ceffecb65e",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-58606028753a",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-483ca9773c98",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 1,
+      "answer_id": "ans-1aa8528e048c",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-59092428fe5b",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-fad55fbf31b5",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-91ed509d30ae",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-7f2ee3abd1f4",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-cd1f0728fcc3",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-eda323db0db2",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-49d690c6ccfb",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-ec2678220b19",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-509a75f11d6d",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 2,
+      "answer_id": "ans-25739af3dbdf",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-676d260b6bc0",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-4add06fed1f5",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-a442a279809e",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-bc2f22aa0336",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-7d6b650fbc22",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-d56d54a615bc",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-3f8bc7a25ee5",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-a51849f457c2",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-f27cc54a1c3e",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 3,
+      "answer_id": "ans-bda8537a9272",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-45e48f29c51b",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-87501cb8451c",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-809176a5de37",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-e438ab7cce79",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-a040ee9b423c",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-c183af084198",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-641e1fe459c2",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-b5335f7ca6b2",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-8a1c686b6ed5",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 4,
+      "answer_id": "ans-e75e38f645d5",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-5ba0d5c61444",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-92e42c880fea",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-586a881b7ed2",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-5c237cb3cbb1",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-3dd484214950",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-be53186bdc72",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-56f2897f5cea",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-73fcb3926da0",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-c8f84323bd97",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 5,
+      "answer_id": "ans-657fba08c9c2",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-179d3b281184",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-6bb6eb974598",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-db3c2bf38411",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-a44f14169374",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-296cc1dbd306",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-69af7e372c35",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-b5a65fce4866",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-390535282df0",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-5706adecf679",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 6,
+      "answer_id": "ans-bbfb360779a6",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-019e939a8f3d",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-3d490b339e01",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-43e2922d7fcd",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-0ab9c8c15936",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-1f83405723fd",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-2009fc40b63f",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-587969aed1a1",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-4a9bccb72348",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-ce77c39136e9",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 7,
+      "answer_id": "ans-8d18654194c2",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-6d80c13fc954",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-8174cdf3faa8",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-98c762ee6f16",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-3c4fc71fe58d",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-098bd6027cc5",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-8edb99adedea",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-91d12a2c0b30",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-045cb40ffd77",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-995da641726e",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 8,
+      "answer_id": "ans-38ed14a1bffe",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-d8eb2d9079c8",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-7f1968e64866",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-53939e2cf722",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-4c37db9757f8",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-1841a1beaeea",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-c1d591dc9d31",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-6af645459072",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-75b3b3874658",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-aef2b18db5cc",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 9,
+      "answer_id": "ans-9cfd6a422958",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-5b61fc8b3346",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-77594f577b11",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-97e583d5c317",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-4a87ea0518f0",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-e719acc1d5f6",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-f63194f19a8c",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-5913876f18b3",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-aeb99008f82a",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-4d925b81de31",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 10,
+      "answer_id": "ans-3b8a574cbc0d",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-5433e4e4721b",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-a2120af87b5b",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-e66c8d4b2d83",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-91bd35153587",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-01c57cb24e45",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-38b26abb4486",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-e5dbde8e1e81",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-bf4ac201a1e3",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-aaeea2bda9a1",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 11,
+      "answer_id": "ans-9ace5ae125ec",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-ee3485a1c420",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-32c4fb41ab9d",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-763c7707ad90",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-e18324e9aaa4",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-8951a4c68103",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-c9bd2d993f3f",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-f083be16124d",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-38175bfdaeaa",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-de2838b62c19",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 12,
+      "answer_id": "ans-fee20e34bf55",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-83ce8c8df007",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-1c1d187a79f7",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-866fe7f78aa6",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-c106570520c5",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-84fe7d8c94c5",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-1b64bfee76db",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-99e8ad9a6192",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-8306d1cc7279",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-44ac45a9dd6d",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 13,
+      "answer_id": "ans-39916103b40f",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-82d0894708e9",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-5c673b7b489b",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-4e8239c79139",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-9fc8dad7e378",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-d462dcf1a26c",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-c4f438e13c6d",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-e8974083f0c1",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-471b1976312e",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-e2a890e7d296",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 14,
+      "answer_id": "ans-a5211372048c",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-4d7eb1b0d04a",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-4879d44c0842",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-11db4a40cd27",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-1700a67fce0c",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-a4840bb51b48",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-7fe62cdaf74b",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-8eb524288a73",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-bfe718a301dd",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-fa795ce7462b",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 15,
+      "answer_id": "ans-86f2dbf6ecfa",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-6ed71b7c00b0",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-a2918db9f634",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-1545d0ca34f7",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-40d5ab878177",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-92ea34b01d1c",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-d74df12c8410",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-f1593ed28c0d",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-4bf6c4d82d4c",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-6ceaf6b790b6",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 16,
+      "answer_id": "ans-c8663dce0941",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-dc5df51c97b7",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-e2577afac2e0",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-2ea09a0da05f",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-f4022d5dcc94",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-701ced463a1f",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-5125c0d14a82",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-59bce3e3596a",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-365e25faa40e",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-aede52016427",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 17,
+      "answer_id": "ans-35016d1c54cf",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-ec95df5f8968",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-71a9dd045d20",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-699e2ad9c626",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-eae04fd4b7b4",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-428bb4178b43",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-4a3c859a301f",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-bb0c7a0aef60",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-26a9e85a3314",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-c5328592fcbd",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 18,
+      "answer_id": "ans-7333136687a2",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-5d4ef6158608",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-cf1892383e69",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-d75c5a415769",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-ee10e14e0115",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-3d0af6d21d77",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-657f1d5de9d3",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-1a26db842d41",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-66d56602490a",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-778f0ea98375",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 19,
+      "answer_id": "ans-674011816cd3",
+      "answer_quality": 9
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-5d32987448a0",
+      "answer_quality": 0
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-47013b5babf2",
+      "answer_quality": 1
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-93dd0851f399",
+      "answer_quality": 2
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-956231bbfb07",
+      "answer_quality": 3
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-4ae43cfb2f4e",
+      "answer_quality": 4
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-f7c9b04aaf97",
+      "answer_quality": 5
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-f9d4e775d697",
+      "answer_quality": 6
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-a127935220de",
+      "answer_quality": 7
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-fc20d6ecd3da",
+      "answer_quality": 8
+    },
+    {
+      "category": "数据结构课程知识问答",
+      "qa_id": 20,
+      "answer_id": "ans-16f590d84005",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-3cff287889d7",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-67237ab020c0",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-81f651794163",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-f10d381db524",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-c83e0cc9f78e",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-cb14b2ede88f",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-227090ebd419",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-01675eb44afa",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-a6bdfdd94cb8",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 1,
+      "answer_id": "ans-9a931f88f923",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-12f631a2fbe5",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-ec775ac62c60",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-9c67e7e0505f",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-88e0a255ddcb",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-a99740081806",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-db9b142a238d",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-5c4e343c6526",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-3c63a98e05f1",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-2a55607bcc95",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 2,
+      "answer_id": "ans-b0f692aeac1c",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-aab9f30182cb",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-91be688c1720",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-926deea2ad7d",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-54edaf45b653",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-6d5d826ff032",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-3d516ad60ced",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-efb4bbe5a3a8",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-58d550dea6b6",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-1cc31d4e894f",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 3,
+      "answer_id": "ans-09c23498996a",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-fdc6bc002971",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-70093273e1c6",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-34c433b5995e",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-7e741ece35ea",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-2b8634fcb4ba",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-c399cc1c94a7",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-daf455c3d3f7",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-66d1b678f438",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-a0951c9fef44",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 4,
+      "answer_id": "ans-c9d17c74654b",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-a42ab9bcecb4",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-29b49dac2e9a",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-b686fc0eb161",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-c708c2035100",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-dd890e521406",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-f783e5515af0",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-fdf1dffce580",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-69de2b63488c",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-27cfeeb7e8ef",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 5,
+      "answer_id": "ans-5a7d53957090",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-43b698447349",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-6ce11e7caabc",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-e26c4c763c46",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-df6c633234f1",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-5e5ccb555fa0",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-6492c766194f",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-879d2173b10f",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-702b3358b4cd",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-a7bb6786a87b",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 6,
+      "answer_id": "ans-257634b9fa7f",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-a1ab6de956ce",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-1798fbe48f0d",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-c0fc9c87cbed",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-977830128b59",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-baf916a8100d",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-8515992445ef",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-b2b74537581a",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-45b2148d6335",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-842e08cc6d1f",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 7,
+      "answer_id": "ans-2b5732b5d9b8",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-b331729ea38f",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-3535e1e4f102",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-e4490884cc41",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-ad0f3d415abb",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-51bf589acfc3",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-42520c0a97fa",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-09616698ac80",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-0141115b5a33",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-ed902aa74209",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 8,
+      "answer_id": "ans-3b8eec17babe",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-aca20ea78223",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-8cf97165e102",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-096de243c4f8",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-591f3cae3f3b",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-d7495cade73d",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-a56ef62902fe",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-1cb4788f1f8d",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-0665a5e8f948",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-d5198a4a5acf",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 9,
+      "answer_id": "ans-f75b5a8ae7db",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-b23ebefb29ba",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-970201dde91a",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-c0b878620226",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-2b2c4c9dedaa",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-4cf098d72893",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-a1d02af291ad",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-f71fe1a74668",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-0a4660fb5221",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-1afc54dec8f6",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 10,
+      "answer_id": "ans-5beb5f76aadd",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-7366ac2f5cfb",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-abe3870021d1",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-fc163af40ddc",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-1ae486f2654a",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-b031b1b75e92",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-0639ceb054b1",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-54a1f8353a26",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-cf364d4b94d2",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-8fcd58bcf0eb",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 11,
+      "answer_id": "ans-687d76b0bd2d",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-e58a50ee8d59",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-58ffaeec80d4",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-260c92afa807",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-d8a5f0906db6",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-c95de65714aa",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-b52435c30633",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-bf7a19b41039",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-0796691f5290",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-5b5651a01f1c",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 12,
+      "answer_id": "ans-a7f9e659236e",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-1443e46b621e",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-5b0ba8e70727",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-b1dcd000d764",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-f2762cd19292",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-3da23d53bb98",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-1e56793c6346",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-408f6fff8634",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-4057dc5c5d13",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-12d8fbb7ce83",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 13,
+      "answer_id": "ans-b63c3016c5ce",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-b41de3da2ec8",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-f92f930f9330",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-30c1e5848c6e",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-430e60f733e5",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-039497f895c9",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-476e378ce9bc",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-cc7c455dc3cc",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-5f408f351cb8",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-814b0a5bbdfd",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 14,
+      "answer_id": "ans-b71b2d3b9206",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-f7a3e80ab978",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-b45826c3c4a5",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-8e31cdcf9683",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-0083dcd5119b",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-2037f0b7ab89",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-90d7febdf44d",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-5cea32138af3",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-021ab79aedcf",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-19d7a37cdd99",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 15,
+      "answer_id": "ans-ddc7afd80bed",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-121bba7502fd",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-8b3937704a6c",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-b6097d3adeb5",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-7c65e7b36882",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-957f90bb361f",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-ecb940feb23f",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-47759af4d2c4",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-cf608567de17",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-80e6818f989d",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 16,
+      "answer_id": "ans-af871625e716",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-37b9e2f486d7",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-6c6993259d27",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-a6ded361f81c",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-fc0bbe723e5a",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-3a74b579f72b",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-77e1f046ce26",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-788fbed693ce",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-44726a780b88",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-8a82576748ec",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 17,
+      "answer_id": "ans-23a084d021da",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-ac494b06e773",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-c49dd9f0943e",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-bb52fa16e966",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-0d75f27b227f",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-7678f93b8399",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-78e5bac96873",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-c64536001ea2",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-5bf8886f2a1e",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-8a373352cf92",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 18,
+      "answer_id": "ans-9040a2e26bb2",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-09d5666ed4bc",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-d1232a56a5c8",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-eab09f1b6a3a",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-57b203367464",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-106bb0eaaf0a",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-1079a584ffad",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-17f88862a4c4",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-92781702c80d",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-649ddcd1cf49",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 19,
+      "answer_id": "ans-75df75d370ac",
+      "answer_quality": 9
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-1d0c73c46114",
+      "answer_quality": 0
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-8e98f7d36f42",
+      "answer_quality": 1
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-41084d9645f8",
+      "answer_quality": 2
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-699e0ec96432",
+      "answer_quality": 3
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-d34784bead1b",
+      "answer_quality": 4
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-d8d605c73468",
+      "answer_quality": 5
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-b17889f60f81",
+      "answer_quality": 6
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-0aeeeaa85d78",
+      "answer_quality": 7
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-2b56e5a15a74",
+      "answer_quality": 8
+    },
+    {
+      "category": "C++高级程序设计",
+      "qa_id": 20,
+      "answer_id": "ans-d55c0a663003",
+      "answer_quality": 9
+    }
+  ]
+}

@@ -17,40 +17,49 @@ if str(BACKEND_DIR) not in sys.path:
 from rag_core.contracts.enums import RagMode
 from rag_core.contracts.models import RagRequest
 from rag_core.pipeline import FakeRagPipeline
-
-
-SAMPLE_DOCUMENT = """Budget-Constrained Online Retrieval-Augmented Generation
-
-Chunk-as-a-Service 模型研究有限 chunk 预算下的在线检索问题。
-UCOSA 在预算约束下选择 chunks，并与 random selection 和 offline selection 做对比。
-
-OB-CaaS 在在线已知预算时优化检索。LB-CaaS 使用学习到的预算感知策略。
-NEP x AR 指标结合 normalized evidence precision 与 answer recall，用于衡量有证据支撑的回答质量。
-"""
+from rag_core.testing import (
+    build_course_qa_document,
+    default_course_qa_query,
+    load_course_qa_candidates,
+    summarize_course_qa,
+)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="运行本地模拟 RAG 冒烟流水线。")
     parser.add_argument("--mode", choices=["fake"], default="fake", help="P0 冒烟测试只允许使用模拟模式。")
     parser.add_argument("--rag-mode", choices=[mode.value for mode in RagMode], default=RagMode.BASIC_RAG.value)
-    parser.add_argument("--query", default="UCOSA 在 Chunk-as-a-Service 中解决了什么问题？")
-    parser.add_argument("--top-k", type=int, default=2)
+    parser.add_argument("--dataset", default="sample_data/course_qa_public.json", help="课程 QA 默认测试数据路径。")
+    parser.add_argument("--category", default=None, help="可选课程主题；为空时使用全部主题。")
+    parser.add_argument("--max-questions", type=int, default=20, help="冒烟测试最多读取的问题数。")
+    parser.add_argument("--query", default=None, help="可选查询；为空时使用课程 QA 数据中的第一条问题。")
+    parser.add_argument("--top-k", type=int, default=3)
     parser.add_argument("--pretty", action="store_true", help="格式化输出 JSON。")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    candidates = load_course_qa_candidates(
+        dataset_path=args.dataset,
+        category=args.category,
+        max_questions=args.max_questions,
+    )
+    query = args.query or default_course_qa_query(candidates)
+    document = build_course_qa_document(candidates, source=args.dataset)
     request = RagRequest(
-        query=args.query,
+        query=query,
         rag_mode=RagMode(args.rag_mode),
         top_k=args.top_k,
-        collection_id="smoke-demo",
+        collection_id="course-qa-smoke",
         model="mock-generator",
         provider="mock",
         require_citations=True,
+        metadata={"dataset_summary": summarize_course_qa(candidates)},
     )
-    answer = FakeRagPipeline().answer_text(SAMPLE_DOCUMENT, request, title="chunk-as-a-service")
+    answer = FakeRagPipeline().answer_document(document, request)
+    answer.metadata["dataset_summary"] = summarize_course_qa(candidates)
+    answer.metadata["dataset_path"] = args.dataset
     print(json.dumps(answer.model_dump(mode="json"), ensure_ascii=False, indent=2 if args.pretty else None))
     return 0
 

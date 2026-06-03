@@ -28,6 +28,7 @@
 4. `EmbeddingVector.dim` 必须等于实际向量长度。
 5. 代码注释必须使用中文 Doxygen 风格。
 6. 面向 LLM 或展示的说明文本尽量使用中文。
+7. 第一阶段默认输入是 `sample_data/course_qa_public.json`；不得读取 `answer_quality` 标签。
 
 ## 实施顺序
 
@@ -35,7 +36,7 @@
 2. 实现 `MockEmbedder` 或复用 P0 fake embedder 作为测试兜底。
 3. 实现 `QwenApiEmbedder`，只从环境变量读取 key。
 4. 实现 `QwenLocalEmbedder`，模型不可用时抛出项目级 provider 异常。
-5. 增加 contract tests，验证数量、维度、provider、model、metadata。
+5. 用课程 QA public 候选答案增加 contract tests，验证数量、维度、provider、model、metadata。
 6. 编写 `scripts/compare_embeddings.py --mode mock`，真实模式作为可选 integration。
 
 ## 验收命令

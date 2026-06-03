@@ -12,6 +12,8 @@
 6. 代码注释必须使用中文 Doxygen 风格。
 7. 面向 LLM 的 prompt、mock 输出、展示文案尽量使用中文。
 8. `SearchHit.score` 必须越大越相关。
+9. 第一阶段默认测试数据是 `sample_data/course_qa_public.json`。
+10. `answer_quality` 档次只允许评测脚本读取，禁止进入 RAG 索引、prompt、trace 或前端展示。
 
 ## 必读文档
 
@@ -20,6 +22,7 @@
 - `docs/contribution.md`
 - `docs/sprint_board.md`
 - `docs/agent_instructions/README.md`
+- `sample_data/course_qa_public.json`
 
 ## P0 验收命令
 

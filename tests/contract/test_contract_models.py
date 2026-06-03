@@ -43,18 +43,18 @@ def test_embedding_vector_dimension_is_checked():
 
 
 def test_request_chunk_hit_and_trace_validate_boundaries():
-    request = RagRequest(query="UCOSA 是什么？", rag_mode=RagMode.BASIC_RAG, top_k=3)
+    request = RagRequest(query="什么是自然语言处理？", rag_mode=RagMode.BASIC_RAG, top_k=3)
     assert request.rag_mode == RagMode.BASIC_RAG
 
     chunk = Chunk(
         chunk_id="chunk1",
         doc_id="doc1",
-        text="UCOSA solves budget-constrained retrieval.",
-        source="paper.md",
+        text="自然语言处理研究如何让机器处理、理解和生成自然语言。",
+        source="course_qa_public.json",
         block_ids=["b1"],
         block_types=[BlockType.TEXT],
         token_count=4,
-        metadata={"page_numbers": [1], "section_path": ["Method"]},
+        metadata={"page_numbers": [1], "section_path": ["自然语言处理课程知识问答"]},
     )
     assert chunk.metadata["page_numbers"] == [1]
 

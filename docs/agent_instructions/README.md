@@ -14,3 +14,5 @@
 - 单元测试不得依赖真实网络、真实 API key、真实模型下载。
 - 不得修改其他成员负责目录。
 - 不得删除 fake/mock fallback。
+- 第一阶段默认测试数据是 `sample_data/course_qa_public.json`。
+- `answer_quality` 档次只能由评测脚本读取，禁止进入 RAG 索引、prompt、trace 或前端展示。

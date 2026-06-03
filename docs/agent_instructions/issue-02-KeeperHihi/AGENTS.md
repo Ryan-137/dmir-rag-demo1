@@ -27,14 +27,16 @@
 3. 不得声称 Chroma 支持 Milvus 式多算法；只能表述为 HNSW profiles。
 4. benchmark 可以本地/手动运行，不要阻塞普通单元测试。
 5. 代码注释必须使用中文 Doxygen 风格。
+6. 第一阶段 benchmark 默认使用 `sample_data/course_qa_public.json`；不得读取 `answer_quality` 标签。
 
 ## 实施顺序
 
 1. 读取 #1 的 `VectorIndex` Protocol 和 `SearchHit` contract。
-2. 实现 `NumpyFlat` exact baseline，用作 recall 上界。
-3. 实现 `chroma_hnsw_fast`、`chroma_hnsw_balanced`、`chroma_hnsw_high_recall` 配置。
-4. 编写 score conversion 测试，确保 Chroma distance 在 adapter 内转成“越大越相关”。
-5. 编写 `bench_chroma.py`，输出 build_time、p50/p95 latency、recall@3/5/10。
+2. 用课程 QA public 候选答案构造小型 benchmark fixture。
+3. 实现 `NumpyFlat` exact baseline，用作 recall 上界。
+4. 实现 `chroma_hnsw_fast`、`chroma_hnsw_balanced`、`chroma_hnsw_high_recall` 配置。
+5. 编写 score conversion 测试，确保 Chroma distance 在 adapter 内转成“越大越相关”。
+6. 编写 `bench_chroma.py`，输出 build_time、p50/p95 latency、recall@3/5/10。
 
 ## 验收命令
 
