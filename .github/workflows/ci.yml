@@ -72,7 +72,7 @@ jobs:
         run: uv venv --python 3.14.4
 
       - name: Install backend dependencies
-        run: uv pip install ${{ runner.os == 'Linux' && '--torch-backend cpu' || '' }} -r backend/requirements.txt
+        run: uv pip install ${{ runner.os == 'Linux' && '--torch-backend cpu' || '' }} -r backend/requirements.txt -r backend/requirements-dev.txt
 
       - name: Compile backend
         run: .venv/bin/python -m compileall backend
@@ -99,3 +99,9 @@ jobs:
               importlib.import_module(module)
               print(f"imported {module}")
           PY
+
+      - name: Run contract tests
+        run: .venv/bin/python -m pytest tests/contract
+
+      - name: Run fake smoke pipeline
+        run: .venv/bin/python scripts/run_smoke_pipeline.py --mode fake

@@ -12,6 +12,25 @@ upload/load -> parse -> chunk -> embed -> index -> search -> generate -> evaluat
 
 所有模块通过 Pydantic models 或 `model_dump()` 后的 schema 交互。禁止裸 `dict` 成为跨模块接口。
 
+## P0 参考实现入口
+
+第一版契约与 fake pipeline 已经落在以下位置，后续真实 adapter 应以这些文件为边界：
+
+- `backend/rag_core/contracts/models.py`：Pydantic 契约模型。
+- `backend/rag_core/contracts/protocols.py`：parser、chunker、embedder、vector index、generator Protocol。
+- `backend/rag_core/testing/fakes.py`：离线 mock parser/chunker/embedder/index/generator。
+- `backend/rag_core/pipeline/orchestrator.py`：本地 fake RAG 流水线。
+- `scripts/run_smoke_pipeline.py`：P0 冒烟脚本。
+- `tests/contract/`：契约测试。
+
+P0 验收命令：
+
+```shell
+python -m compileall backend/rag_core scripts/run_smoke_pipeline.py
+pytest tests/contract
+python scripts/run_smoke_pipeline.py --mode fake --pretty
+```
+
 ## 核心模型
 
 | 模型 | 作用 | 必须字段/约束 |

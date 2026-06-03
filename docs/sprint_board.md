@@ -28,6 +28,17 @@ v1.0 | 2026-06-03
 
 ## 第一批 GitHub Issues
 
+每个 Issue 都有对应的 Agent 指示文档，可直接复制给 Codex、Claude Code 或 Cursor Agent：
+
+- #1: [answerend42/AGENTS.md](agent_instructions/issue-01-answerend42/AGENTS.md)
+- #2: [KeeperHihi/AGENTS.md](agent_instructions/issue-02-KeeperHihi/AGENTS.md)
+- #3: [irishibi/AGENTS.md](agent_instructions/issue-03-irishibi/AGENTS.md)
+- #4: [cheng1608/AGENTS.md](agent_instructions/issue-04-cheng1608/AGENTS.md)
+- #5: [Magicpjl/AGENTS.md](agent_instructions/issue-05-Magicpjl/AGENTS.md)
+- #6: [yourskenny/AGENTS.md](agent_instructions/issue-06-yourskenny/AGENTS.md)
+- #7: [Ryan-137/AGENTS.md](agent_instructions/issue-07-Ryan-137/AGENTS.md)
+- #8: [answerend42/AGENTS.md](agent_instructions/issue-08-answerend42/AGENTS.md)
+
 ### 1. Freeze contracts and fake RAG pipeline
 
 - Owner: `answerend42`
