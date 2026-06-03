@@ -1,6 +1,6 @@
 # RAG Demo 一周冲刺任务看板
 
-v1.0 | 2026-06-03
+v1.1 | 2026-06-03
 
 ## 本周目标
 
@@ -9,9 +9,9 @@ v1.0 | 2026-06-03
 | 优先级 | 定义 | 本周必须做到什么 |
 | --- | --- | --- |
 | P0 | 系统可运行 | fake pipeline、Basic RAG、CI、固定 demo 数据必须可用 |
-| P1 | 满足老师要求 | 课程 QA 默认数据、API/local 模型、React 功能、PDF 解析、Chroma 索引、检索优化 |
-| P2 | 展示质量 | trace、citation、benchmark、评测报告、对比表 |
-| P3 | 扩展优化 | 新论文语料、更多模型、更多 OCR 方案、UI 美化 |
+| P1 | 满足老师要求 | 课程 QA 默认数据、新论文资料准备、API/local 模型、React 功能、PDF 解析、Chroma 索引、检索优化 |
+| P2 | 展示质量 | trace、citation、benchmark、课程 QA 与论文评测报告、对比表 |
+| P3 | 扩展优化 | 更多模型、更多 OCR 方案、UI 美化 |
 
 ## 每日节奏
 
@@ -22,7 +22,7 @@ v1.0 | 2026-06-03
 | D2 | 各模块 adapter 雏形 | 全员 | 每人只在自己目录提交 adapter skeleton + contract test + fixture |
 | D3 | Basic RAG 端到端 | `answerend42` + 各模块负责人 | 上传 PDF -> 解析 -> chunk -> embedding -> Chroma -> search -> generate -> markdown 展示 |
 | D4 | 优化与基准 | `KeeperHihi`, `cheng1608`, `Ryan-137` | Chroma HNSW profile benchmark；query rewrite/rerank/context packing；三模式评测脚本 |
-| D5 | 数据与前端展示 | `Magicpjl`, `yourskenny`, `Ryan-137` | 课程 QA public/labels、trace panel、eval dashboard，固定 5 个课程 QA 演示问题 |
+| D5 | 数据与前端展示 | `Magicpjl`, `yourskenny`, `Ryan-137` | 课程 QA public/labels、trace panel、eval dashboard，固定 5 个课程 QA 演示问题；同步确定目标新论文、干扰论文和论文 QA/evidence 计划 |
 | D6 | 锁定 demo | 全员 | 只修 bug 不扩功能；生成最终报告表；每人准备自己负责模块的 1 分钟说明 |
 | D7：展示前 | 排练与兜底 | `answerend42` + 全员 | 录屏/截图/本地缓存模型与索引；准备 fallback 问题和离线结果 |
 
@@ -87,12 +87,12 @@ v1.0 | 2026-06-03
 - Definition of Done：`npm run build` 通过；可显示 retrieved_hits、citations、trace、三模式评测表。
 - 风险控制：前端不得依赖后端私有文件结构，只读 `RagAnswer` schema。
 
-### 7. Course QA evaluation report
+### 7. Course QA and paper evaluation report
 
 - Owner: `Ryan-137`
 - ALLOWED_PATHS: `eval/`, `scripts/run_eval.py`, `sample_data/`, `docs/`
-- 工作内容：基于 `sample_data/course_qa_public.json` 和 `eval/labels/course_qa_quality_labels.json` 实现课程 QA 评测报告。
-- Definition of Done：`run_eval.py` 输出 JSON/CSV/Markdown；至少 5 个课程 QA 现场展示问题稳定。
+- 工作内容：阶段 A 基于 `sample_data/course_qa_public.json` 和 `eval/labels/course_qa_quality_labels.json` 实现课程 QA 评测报告；阶段 B 确定目标新论文、相关干扰论文、论文 QA、evidence 标注和三模式评测报告。
+- Definition of Done：`run_eval.py` 输出 JSON/CSV/Markdown；至少 5 个课程 QA 现场展示问题稳定；论文阶段有目标论文 metadata、干扰论文清单、20-30 个论文问题与 evidence 标注方案。
 - 风险控制：`answer_quality` 只允许评测脚本在生成后读取，禁止进入 RAG 索引、prompt、trace 或前端展示。
 
 ### 8. Integration and demo lock
@@ -105,7 +105,7 @@ v1.0 | 2026-06-03
 
 ## 固定演示问题建议
 
-第一阶段演示问题先从课程 QA 数据中选，不要求马上找新论文。
+第一阶段演示问题先从课程 QA 数据中选；最终论文演示问题由 #7 在同一个 Issue 的阶段 B 补齐，不再新开一轮 Issue。
 
 | 问题类型 | 示例问题 | 期望现象 |
 | --- | --- | --- |

@@ -29,6 +29,7 @@
 4. 单元测试不得依赖真实 API、网络或模型下载。
 5. 代码注释必须使用中文 Doxygen 风格。
 6. 第一阶段 prompt 只允许使用 `sample_data/course_qa_public.json` 检索到的证据；不得读取 `answer_quality` 标签。
+7. prompt 和 context packing 必须同时适配课程 QA 证据与后续论文证据，论文阶段不另开新的生成 Issue。
 
 ## 实施顺序
 
@@ -37,6 +38,7 @@
 3. 实现 `QwenApiGenerator` 和 `QwenLocalGenerator` 的 adapter skeleton。
 4. 实现 query rewrite、context packing、citation formatting 的纯函数，并为它们写 unit tests。
 5. 使用 mock provider 测试 `answer_markdown`、`citations`、`warnings`、`trace`。
+6. 为阶段 B 预留论文证据格式处理，支持 page、section、table、caption metadata 进入引用和回答约束。
 
 ## 验收命令
 
@@ -53,3 +55,4 @@ PR 中必须写明：
 - 缺证据拒答策略。
 - API/local/mock provider 切换方式。
 - citation 输出示例。
+- 课程 QA 证据与论文证据共用 prompt 模板的方式。

@@ -1,6 +1,6 @@
 # Issue #5 Agent 指示：Research paper parser and chunker
 
-你正在为 RAG Demo 项目完成 GitHub Issue #5。目标是增强研究论文解析和分块，让 parser 输出 `ParsedDocument`，chunker 保留 page/section/table/caption 元数据。
+你正在为 RAG Demo 项目完成 GitHub Issue #5。目标是增强研究论文解析和分块，让 parser 输出 `ParsedDocument`，chunker 保留 page/section/table/caption 元数据。课程 QA 是阶段 A 的默认链路；目标新论文和干扰论文是本 Issue 的阶段 B，不另开新 Issue。
 
 ## Owner
 
@@ -28,6 +28,7 @@
 3. 输出必须对齐 `ParsedDocument`、`ContentBlock`、`Chunk` contract。
 4. chunk metadata 必须尽量保留 `page_numbers`、`section_path`、`block_type`。
 5. 代码注释必须使用中文 Doxygen 风格。
+6. 大体积论文 PDF 不要直接提交到仓库；优先提交 metadata、小样例或下载说明。
 
 ## 实施顺序
 
@@ -37,6 +38,7 @@
 4. 实现 `research_paper_chunker`，优先按 section/table/caption 保留结构。
 5. 用小样例 PDF 或 Markdown fixture 写 contract tests。
 6. 对复杂版式/OCR 标记可选路线，不作为普通 PR 的硬依赖。
+7. 当 #7 给出目标论文和干扰论文清单后，继续用同一 parser/chunker 支持论文 corpus。
 
 ## 验收命令
 
@@ -52,4 +54,5 @@ PR 中必须写明：
 - parser 方法与 fallback。
 - 输出的 block 类型。
 - chunk metadata 示例。
+- 目标论文和干扰论文接入时需要的文件格式。
 - 复杂 PDF/OCR 尚未覆盖的风险。

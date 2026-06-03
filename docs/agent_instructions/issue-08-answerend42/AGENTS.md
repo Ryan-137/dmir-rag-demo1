@@ -31,6 +31,7 @@
 5. 代码注释必须使用中文 Doxygen 风格。
 6. 面向 LLM 的 prompt 和现场展示文案尽量使用中文。
 7. 第一阶段固定 demo 数据为 `sample_data/course_qa_public.json`；`answer_quality` 只能在评测脚本生成报告时读取。
+8. 论文任务已并入 #5/#7/#8 的阶段 B；集成时不要要求另开新 Issue 才能接论文 corpus。
 
 ## 实施顺序
 
@@ -38,8 +39,9 @@
 2. 汇总 parser、embedding、index、generation、frontend、eval 各模块 PR。
 3. 统一 `/rag/answer` 输入输出。
 4. 固定课程 QA demo 数据、索引、模型 provider、top_k 和 5 个现场问题。
-5. 生成最终评测表、截图、录屏和离线 fallback。
-6. 展示前锁定 main，只合并 P0/P1 bugfix。
+5. 在 #7 给出目标论文后，接入论文 corpus、论文演示问题和三模式评测结果。
+6. 生成最终评测表、截图、录屏和离线 fallback。
+7. 展示前锁定 main，只合并 P0/P1 bugfix。
 
 ## 验收命令
 
@@ -56,5 +58,5 @@ PR 中必须写明：
 
 - 三模式是否都可演示。
 - 真实路径和 fake fallback 的切换方式。
-- 最终演示问题。
+- 课程 QA 与论文两类最终演示问题。
 - 录屏、截图或离线结果位置。

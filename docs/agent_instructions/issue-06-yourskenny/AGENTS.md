@@ -27,6 +27,7 @@
 3. 文案尽量中文，展示字段名可以保留必要英文术语。
 4. 涉及前端改动必须通过 `npm run build`。
 5. 前端不得展示 `answer_quality`，也不得假设后端会返回质量档次。
+6. 前端同一套组件必须能展示课程 QA 结果和后续论文 RAG 结果，不另开新的前端 Issue。
 
 ## 实施顺序
 
@@ -36,6 +37,7 @@
 4. 新增 `PipelineConfigPanel`，配置 rag_mode、top_k、provider/model。
 5. 新增 `EvaluationDashboard`，展示 LLM-only / Basic RAG / Optimized RAG 三模式指标。
 6. 使用课程 QA mock `RagAnswer` 做前端渲染验证，并确认没有 `answer_quality` 字段。
+7. 为阶段 B 预留论文字段展示：source、page、section、table/caption，不展示隐藏评测标签。
 
 ## 验收命令
 
@@ -51,4 +53,5 @@ PR 中必须写明：
 - 新增组件列表。
 - mock `RagAnswer` 示例或截图。
 - 是否需要后端新增字段。
+- 课程 QA 与论文结果在同一 dashboard 中的展示方式。
 - build 结果。

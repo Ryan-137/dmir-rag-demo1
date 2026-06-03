@@ -14,6 +14,7 @@
 8. `SearchHit.score` 必须越大越相关。
 9. 第一阶段默认测试数据是 `sample_data/course_qa_public.json`。
 10. `answer_quality` 档次只允许评测脚本读取，禁止进入 RAG 索引、prompt、trace 或前端展示。
+11. 新论文 RAG 任务已经并入现有 Issue 的阶段 B；不要等课程 QA 完成后再要求新开 Issue。
 
 ## 必读文档
 

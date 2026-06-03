@@ -3,7 +3,7 @@
 信息检索课程结课实验项目。当前目标不是泛泛做一个 RAG 模板，而是按老师要求完成两个可展示任务：
 
 1. **课程 QA 任务**：使用老师提供的上一项目 QA 数据，先跑通检索、生成、trace 和评测。
-2. **新论文 RAG 任务**：后续补充一篇大模型未充分掌握的新论文及相关干扰论文，展示 LLM-only 不足、Basic RAG 改善、Optimized RAG 进一步提升。
+2. **新论文 RAG 任务**：同一批 Issue 内继续补充一篇大模型未充分掌握的新论文及相关干扰论文，展示 LLM-only 不足、Basic RAG 改善、Optimized RAG 进一步提升。
 
 本仓库基于课程 RAG 框架模板整理而来，但现在已经进入 contract-first 的多人协作阶段：先冻结接口和默认数据，再由各成员并行实现 parser、embedding、index、generation、frontend 和 evaluation。
 
@@ -14,7 +14,7 @@
 - P0 已完成：`backend/rag_core/contracts/`、fake pipeline、contract tests 和 smoke pipeline 已进入 CI。
 - 第一阶段默认输入是课程 QA 数据：`sample_data/course_qa_public.json`。
 - 课程 QA 的 0-9 档质量标签只保存在 `eval/labels/course_qa_quality_labels.json`，禁止进入 RAG 索引、prompt、trace 或前端展示。
-- 新论文任务没有取消，只是排在课程 QA 默认链路跑通之后。
+- 新论文任务没有取消，已经并入 #5、#7、#8 和各模块的阶段 B；只是排在课程 QA 默认链路跑通之后。
 
 ## 快速验证
 
@@ -38,7 +38,7 @@ python scripts/run_smoke_pipeline.py --mode fake --pretty
 | --- | --- | --- |
 | `sample_data/course_qa_public.json` | 课程 QA 默认测试输入，只含主题、问题、候选答案、`answer_id` | 是 |
 | `eval/labels/course_qa_quality_labels.json` | 课程 QA 质量档次标签，只供评测脚本生成报告 | 否 |
-| 论文 PDF / Markdown corpus | 后续新论文 RAG 任务使用 | 后续接入 |
+| 论文 PDF / Markdown corpus | 第二阶段新论文 RAG 任务使用，由现有 Issue 接入 | 后续接入 |
 
 质量档次隔离规则：
 
@@ -99,10 +99,10 @@ docs/
 - #4：Qwen LLM API/local and optimized generation
 - #5：Research paper parser and chunker
 - #6：Frontend trace/config/eval dashboard
-- #7：Course QA evaluation report
+- #7：Course QA and paper evaluation report
 - #8：Integration and demo lock
 
-注意：#5 的论文解析能力和后续新论文任务仍然要做；只是第一阶段所有人先围绕 `course_qa_public.json` 建立可运行、可评测的默认链路。
+注意：论文任务不是新增一轮分工，而是现有 Issue 的阶段 B。第一阶段所有人先围绕 `course_qa_public.json` 建立可运行、可评测的默认链路；课程 QA 跑通后，#7 负责目标论文、干扰论文、论文 QA/evidence 与评测报告，#5 负责论文解析与分块，#8 负责最终整合，#2/#3/#4/#6 复用自己的模块支持论文 corpus。
 
 ## 后端环境
 
@@ -168,9 +168,9 @@ GitHub Actions 当前会运行：
 - 质量标签隔离，完成课程 QA 评测报告。
 - 前端展示答案、引用、检索命中和 trace。
 
-第二阶段：
+第二阶段，已并入现有 Issue：
 
-- 找到老师要求的新论文。
-- 准备目标论文与相关干扰论文 corpus。
-- 增加 PDF/Markdown/OCR 解析与论文分块。
-- 做 LLM-only / Basic RAG / Optimized RAG 三模式对比。
+- #7 找到老师要求的新论文，准备目标论文、相关干扰论文、论文 QA、evidence 标注和评测报告。
+- #5 增加 PDF/Markdown/OCR 解析与论文分块。
+- #2/#3/#4/#6 复用索引、embedding、生成和前端能力支持论文 corpus。
+- #8 做 LLM-only / Basic RAG / Optimized RAG 三模式最终对比与 demo lock。

@@ -104,6 +104,7 @@ cd frontend && npm run build
 - PDF 和论文数据如果体积较大，不要直接提交到主仓库；可提交下载脚本、metadata 和小型 sample。
 - 课程 QA 默认输入必须使用 `sample_data/course_qa_public.json`；`eval/labels/course_qa_quality_labels.json` 只允许评测脚本在生成完成后读取。
 - `answer_quality` 禁止进入 RAG 索引、LLM prompt、retrieved hits、trace 和前端展示。
+- 新论文 RAG 任务已经并入现有 Issue 的阶段 B；课程 QA 跑通后继续按原 Issue 推进论文 corpus、论文 QA/evidence 和最终评测。
 - 生成结果、benchmark 结果允许作为 `eval/results/` 下的小 JSON/CSV 提交，但应去除密钥、绝对路径和个人信息。
 - 本地模型权重、Chroma 数据目录、临时文件必须加入 `.gitignore`。
 - 微信群聊导出只作为内部项目计划依据，正式展示材料不出现微信头像、wxid 等隐私字段。

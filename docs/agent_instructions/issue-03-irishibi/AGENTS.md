@@ -29,6 +29,7 @@
 5. 代码注释必须使用中文 Doxygen 风格。
 6. 面向 LLM 或展示的说明文本尽量使用中文。
 7. 第一阶段默认输入是 `sample_data/course_qa_public.json`；不得读取 `answer_quality` 标签。
+8. 同一 adapter 必须能处理课程 QA chunks 和后续论文 chunks，不要为论文单独发明不兼容字段。
 
 ## 实施顺序
 
@@ -38,6 +39,7 @@
 4. 实现 `QwenLocalEmbedder`，模型不可用时抛出项目级 provider 异常。
 5. 用课程 QA public 候选答案增加 contract tests，验证数量、维度、provider、model、metadata。
 6. 编写 `scripts/compare_embeddings.py --mode mock`，真实模式作为可选 integration。
+7. 为阶段 B 预留输入路径参数，后续可直接对论文 chunk fixture 跑 mock/API/local 对比。
 
 ## 验收命令
 
@@ -54,4 +56,5 @@ PR 中必须写明：
 - API/local/mock 三种路径的差异。
 - 是否需要环境变量。
 - 测试是否完全离线。
+- 课程 QA 与论文 chunk 输入是否共用同一 contract。
 - 真实 API 或本地模型没有跑通时的 fallback。

@@ -28,6 +28,7 @@
 4. benchmark 可以本地/手动运行，不要阻塞普通单元测试。
 5. 代码注释必须使用中文 Doxygen 风格。
 6. 第一阶段 benchmark 默认使用 `sample_data/course_qa_public.json`；不得读取 `answer_quality` 标签。
+7. 当 #5/#7 提供论文 corpus fixture 后，本 Issue 继续用同一套 benchmark 支持论文 chunks，不另开新 Issue。
 
 ## 实施顺序
 
@@ -37,6 +38,7 @@
 4. 实现 `chroma_hnsw_fast`、`chroma_hnsw_balanced`、`chroma_hnsw_high_recall` 配置。
 5. 编写 score conversion 测试，确保 Chroma distance 在 adapter 内转成“越大越相关”。
 6. 编写 `bench_chroma.py`，输出 build_time、p50/p95 latency、recall@3/5/10。
+7. 为阶段 B 预留 corpus 参数，让 benchmark 可以从课程 QA public 数据切换到论文 chunk fixture。
 
 ## 验收命令
 
@@ -53,4 +55,5 @@ PR 中必须写明：
 - 每个 HNSW profile 的参数。
 - NumpyFlat baseline 的用途。
 - benchmark 小数据结果。
+- 论文 corpus fixture 接入方式或预留参数。
 - 没有跑真实大 benchmark 时的原因。
