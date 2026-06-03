@@ -20,6 +20,12 @@ backend/03-vector-store/
 backend/04-search-results/
 backend/05-generation-results/
 
+# Local model downloads
+hf_model_path/
+
+# Local classroom experiments
+class_exp/
+
 # Logs and local config
 logs/
 *.log

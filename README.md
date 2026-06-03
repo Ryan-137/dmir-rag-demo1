@@ -7,6 +7,13 @@
 
 本仓库基于老师提供的 RAG 框架模板精简整理而来，保留核心前后端代码和部署说明，移除了本地依赖、缓存、运行生成结果和无用脚手架，便于后续在课程模板基础上继续迭代。
 
+## 结课冲刺入口
+
+- [一周冲刺任务看板](docs/sprint_board.md)：每日节奏、8 个任务卡片、每人验收重点。
+- [工程协作与 AI Agent 约束规范](docs/agent_rules.md)：路径所有权、Agent 使用模板、测试与安全边界。
+- [贡献与 PR 规则](docs/contribution.md)：分支、PR、review、CI 门禁。
+- [Contract 与接口说明](docs/interfaces.md)：`ParsedDocument`、`Chunk`、`SearchHit`、`RagRequest`、`RagAnswer` 等边界定义。
+
 ## 项目概述
 
 本项目是一个完全自主实现的 RAG 系统，通过将文档分块、向量化存储、相似度检索等核心功能模块化实现，使用户能够构建自己的知识库问答系统。

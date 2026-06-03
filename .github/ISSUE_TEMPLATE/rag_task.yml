@@ -1,0 +1,44 @@
+name: RAG sprint task
+description: 一周冲刺任务卡片
+title: "[Sprint] "
+labels: ["sprint"]
+body:
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: GitHub 账号或负责人姓名
+      placeholder: answerend42
+    validations:
+      required: true
+  - type: textarea
+    id: allowed_paths
+    attributes:
+      label: ALLOWED_PATHS
+      description: 本任务允许修改的路径。使用 AI Agent 时必须严格复制这一段。
+      placeholder: |
+        - backend/rag_core/contracts/
+        - tests/contract/
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: 工作内容
+      description: 写清输入、输出和要实现的模块。
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of Done
+      description: 写清验收标准、测试命令、输出产物。
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: 风险控制
+      description: 写清禁止事项、fallback、不能依赖的外部条件。
+    validations:
+      required: true
