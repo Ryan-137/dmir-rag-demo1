@@ -2,26 +2,88 @@
  * @file Generation.jsx
  * @brief 响应生成工作流页面。
  */
-import React, { useState, useEffect } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import EvaluationDashboard from '../components/rag/EvaluationDashboard';
+import MarkdownAnswer from '../components/rag/MarkdownAnswer';
+import PipelineConfigPanel from '../components/rag/PipelineConfigPanel';
+import RetrievalTracePanel from '../components/rag/RetrievalTracePanel';
+import { createSafeRagAnswerViewModel, removeForbiddenFields } from '../components/rag/ragViewModel';
+import { courseQaMockRagAnswer, demoEvaluationSummary } from '../config/ragDemoData';
 
 /**
- * @brief 渲染生成提供方返回的 Markdown 内容。
- * @param {{markdownText: string}} props 组件属性。
- * @returns {JSX.Element} Markdown 渲染后的响应内容。
+ * @brief 将旧检索结果包装成 RagAnswer 检索命中。
+ * @param {Array<object>} searchResults 旧搜索端点返回的结果。
+ * @returns {Array<object>} RagAnswer.retrieved_hits 兼容结构。
  */
-const MarkdownViewer = ({ markdownText }) => {
-  return (
-    <div className="markdown-container">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownText}</ReactMarkdown>
-    </div>
-  );
-};
+const mapLegacyResultsToHits = (searchResults) =>
+  searchResults.map((result, index) => {
+    const metadata = result.metadata || {};
+    const pageValue = metadata.page_number || metadata.page;
 
+    return {
+      chunk_id: String(metadata.chunk_id || metadata.chunk || `legacy-chunk-${index + 1}`),
+      doc_id: String(metadata.doc_id || metadata.document_name || metadata.source || 'legacy-search-result'),
+      text: result.text || result.content || '',
+      score: Number(result.score || 0),
+      rank: index + 1,
+      source: String(metadata.source || result.source || 'legacy-search-results'),
+      metadata: {
+        ...metadata,
+        page_numbers: pageValue ? [pageValue] : metadata.page_numbers || [],
+        section_path: metadata.section_path || [],
+      },
+    };
+  });
+
+/**
+ * @brief 将当前旧生成结果包装为前端可展示的 RagAnswer。
+ * @param {object} params 包装参数。
+ * @returns {object} RagAnswer 兼容对象。
+ */
+const buildRagAnswerFromGeneratedResponse = ({ query, response, searchResults, pipelineConfig }) => {
+  const hits = mapLegacyResultsToHits(searchResults);
+  const citations = hits.map((hit) => ({
+    doc_id: hit.doc_id,
+    chunk_id: hit.chunk_id,
+    page_number: hit.metadata.page_numbers?.[0] || null,
+    section_path: hit.metadata.section_path || [],
+    quote: hit.text.slice(0, 240),
+    source: hit.source,
+    metadata: {},
+  }));
+
+  return removeForbiddenFields({
+    contract_version: '0.1.0',
+    answer_markdown: response || '暂无生成回答。',
+    citations,
+    retrieved_hits: hits,
+    trace: [
+      {
+        stage_name: 'frontend_wrap',
+        latency_ms: 0,
+        input_summary: {
+          query,
+          rag_mode: pipelineConfig.ragMode,
+          top_k: pipelineConfig.topK,
+        },
+        output_summary: {
+          hits: hits.length,
+          citations: citations.length,
+        },
+        artifacts: {},
+      },
+    ],
+    warnings: hits.length === 0 ? ['当前生成结果没有检索上下文，引用信息为空。'] : [],
+    metadata: {
+      provider: pipelineConfig.provider,
+      model: pipelineConfig.model,
+      collection_id: pipelineConfig.collectionId,
+      rag_mode: pipelineConfig.ragMode,
+    },
+  });
+};
 
 /**
  * @brief 渲染回答生成控件和检索上下文预览。
@@ -42,6 +104,16 @@ const Generation = () => {
   const [searchFiles, setSearchFiles] = useState([]);
   const [showReasoning, setShowReasoning] = useState(true);
   const [loadModel, setLoadModel] = useState(false);
+  const [pipelineConfig, setPipelineConfig] = useState({
+    ragMode: 'basic_rag',
+    topK: 3,
+    provider: 'mock',
+    model: 'mock-generator',
+    collectionId: 'course-qa-smoke',
+  });
+  const [ragAnswer, setRagAnswer] = useState(courseQaMockRagAnswer);
+
+  const safeRagAnswer = useMemo(() => createSafeRagAnswerViewModel(ragAnswer), [ragAnswer]);
 
   // 加载可用模型列表和搜索结果文件列表
   useEffect(() => {
@@ -142,6 +214,29 @@ const Generation = () => {
       setIsGenerating(false);
       setLoadModel(false);
     }
+  };
+
+  const handleUseMockAnswer = () => {
+    setRagAnswer(courseQaMockRagAnswer);
+    setPipelineConfig((currentConfig) => ({
+      ...currentConfig,
+      ragMode: 'basic_rag',
+      topK: 3,
+      provider: 'mock',
+      model: 'mock-generator',
+      collectionId: 'course-qa-smoke',
+    }));
+  };
+
+  const handleMirrorGeneratedAnswer = () => {
+    setRagAnswer(
+      buildRagAnswerFromGeneratedResponse({
+        query,
+        response,
+        searchResults,
+        pipelineConfig,
+      }),
+    );
   };
 
   return (
@@ -264,47 +359,80 @@ const Generation = () => {
               )}
             </div>
           </div>
+
+          <PipelineConfigPanel
+            config={pipelineConfig}
+            onConfigChange={setPipelineConfig}
+            onUseMockAnswer={handleUseMockAnswer}
+            onMirrorGeneratedAnswer={handleMirrorGeneratedAnswer}
+            hasGeneratedAnswer={Boolean(response)}
+          />
         </div>
 
-        {/* 右侧面板：上下文和回答 */}
-        <div className="col-span-8">
-          {selectedFile ? (
-            <>
-              {/* 搜索结果上下文 */}
-              <div className="mb-6 p-4 border rounded-lg bg-white shadow-sm">
-                <h3 className="text-xl font-semibold mb-4">检索的上下文</h3>
-                <div className="space-y-4 max-h-[300px] overflow-y-auto">
-                  {searchResults.map((result, idx) => (
-                    <div key={idx} className="p-4 border rounded bg-gray-50">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="font-medium text-sm text-gray-500">
-                          Match Score: {(result.score * 100).toFixed(1)}%
-                        </span>
-                        <div className="text-sm text-gray-500">
-                          <div>Source: {result.metadata.source}</div>
-                          <div>Page: {result.metadata.page}</div>
-                        </div>
-                      </div>
-                      <p className="text-sm whitespace-pre-wrap">{result.text}</p>
-                    </div>
-                  ))}
+        {/* 右侧面板：contract 展示、上下文和回答 */}
+        <div className="col-span-8 space-y-6">
+          <div className="rounded-lg border bg-slate-900 p-4 text-white shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h3 className="text-xl font-semibold">Contract RAG 展示</h3>
+                <p className="text-sm text-slate-300">
+                  前端只读取 RagAnswer 字段，可复用在课程 QA 和论文 RAG。
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="rounded bg-white/10 px-3 py-2">
+                  <div className="text-slate-300">Hits</div>
+                  <div className="text-lg font-semibold">{safeRagAnswer.retrievedHits.length}</div>
+                </div>
+                <div className="rounded bg-white/10 px-3 py-2">
+                  <div className="text-slate-300">Citations</div>
+                  <div className="text-lg font-semibold">{safeRagAnswer.citations.length}</div>
+                </div>
+                <div className="rounded bg-white/10 px-3 py-2">
+                  <div className="text-slate-300">Trace</div>
+                  <div className="text-lg font-semibold">{safeRagAnswer.trace.length}</div>
                 </div>
               </div>
-           </>
-          ) : (
-            <div className="mb-6 p-4 border rounded-lg bg-white shadow-sm">
-                <h3 className="text-xl font-semibold mb-4">无检索上下文</h3>
             </div>
-          )}
-              {/* 生成回答 */}
-              {response && (
-                <div className="p-4 border rounded-lg bg-white shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">生成的回答</h3>
-                  <div className="p-4 border rounded bg-gray-50">
-                    <p className="whitespace-pre-wrap"><MarkdownViewer markdownText={response} /></p>
+          </div>
+
+          <MarkdownAnswer
+            answerMarkdown={safeRagAnswer.answerMarkdown}
+            warnings={safeRagAnswer.warnings}
+            contractVersion={safeRagAnswer.contractVersion}
+          />
+
+          <RetrievalTracePanel
+            retrievedHits={safeRagAnswer.retrievedHits}
+            citations={safeRagAnswer.citations}
+            trace={safeRagAnswer.trace}
+          />
+
+          <EvaluationDashboard summary={demoEvaluationSummary} />
+
+          <div className="rounded-lg border bg-white p-4 shadow-sm">
+            <h3 className="mb-4 text-xl font-semibold">旧流程检索上下文</h3>
+            {selectedFile ? (
+              <div className="max-h-[300px] space-y-4 overflow-y-auto">
+                {searchResults.map((result, idx) => (
+                  <div key={`${result.text}-${idx}`} className="rounded border bg-gray-50 p-4">
+                    <div className="mb-2 flex items-start justify-between gap-3">
+                      <span className="text-sm font-medium text-gray-500">
+                        Match Score: {(Number(result.score || 0) * 100).toFixed(1)}%
+                      </span>
+                      <div className="text-sm text-gray-500">
+                        <div>Source: {result.metadata?.source || '-'}</div>
+                        <div>Page: {result.metadata?.page || result.metadata?.page_number || '-'}</div>
+                      </div>
+                    </div>
+                    <p className="whitespace-pre-wrap text-sm">{result.text}</p>
                   </div>
-                </div>
-              )}
+                ))}
+              </div>
+            ) : (
+              <div className="rounded border border-dashed p-4 text-sm text-gray-500">无检索上下文。</div>
+            )}
+          </div>
         </div>
       </div>
     </div>
