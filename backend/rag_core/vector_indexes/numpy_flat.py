@@ -59,8 +59,8 @@ class NumpyFlatIndex:
             raise ValueError("chunks and embeddings must have the same length")
 
         for chunk, embedding in zip(chunks, embeddings):
-            self._validate_pair(chunk, embedding)
             vector = _coerce_vector(embedding.vector, embedding.dim)
+            self._validate_pair(chunk, embedding)
             existing = self._vectors.get(chunk.chunk_id)
             order = existing.order if existing else self._next_order
             if existing is None:

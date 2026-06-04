@@ -188,10 +188,12 @@ class ChromaHnswIndex:
 
         hits: list[SearchHit] = []
         for index, chunk_id_value in enumerate(ids):
+            if index >= len(distances):
+                continue
             chunk_id = str(chunk_id_value)
             metadata = metadatas[index] if index < len(metadatas) and metadatas[index] else {}
             document = str(documents[index]) if index < len(documents) and documents[index] else ""
-            distance = float(distances[index]) if index < len(distances) else 0.0
+            distance = float(distances[index])
             chunk = self._chunks.get(chunk_id)
             restored_metadata = _restore_chunk_metadata(metadata)
 
@@ -246,6 +248,8 @@ class ChromaHnswIndex:
         """! @brief 校验文本块和向量的 ID 与维度。"""
         if chunk.chunk_id != embedding.item_id:
             raise ValueError("Embedding item_id must match Chunk chunk_id")
+        if len(embedding.vector) != embedding.dim:
+            raise VectorDimensionMismatch("EmbeddingVector.dim must match len(vector)")
         if self._dim is None:
             self._dim = embedding.dim
         elif self._dim != embedding.dim:
