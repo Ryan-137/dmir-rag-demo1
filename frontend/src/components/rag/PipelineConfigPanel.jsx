@@ -12,6 +12,14 @@ const RAG_MODES = [
 const CONTROL_CLASS =
   'mt-1 block w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100';
 
+const CONTROL_IDS = {
+  ragMode: 'rag-config-mode',
+  topK: 'rag-config-top-k',
+  provider: 'rag-config-provider',
+  model: 'rag-config-model',
+  collectionId: 'rag-config-collection',
+};
+
 /**
  * @brief 渲染 RAG pipeline 配置控件。
  * @param {object} props 组件属性。
@@ -38,8 +46,9 @@ const PipelineConfigPanel = ({
 
       <div className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700">RAG 模式</label>
+          <label htmlFor={CONTROL_IDS.ragMode} className="block text-sm font-medium text-gray-700">RAG 模式</label>
           <select
+            id={CONTROL_IDS.ragMode}
             value={config.ragMode}
             onChange={(event) => updateConfig('ragMode', event.target.value)}
             className={CONTROL_CLASS}
@@ -53,8 +62,9 @@ const PipelineConfigPanel = ({
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">Top K：{config.topK}</label>
+          <label htmlFor={CONTROL_IDS.topK} className="block text-sm font-medium text-gray-700">Top K：{config.topK}</label>
           <input
+            id={CONTROL_IDS.topK}
             type="range"
             min="1"
             max="10"
@@ -66,16 +76,18 @@ const PipelineConfigPanel = ({
 
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Provider</label>
+            <label htmlFor={CONTROL_IDS.provider} className="block text-sm font-medium text-gray-700">Provider</label>
             <input
+              id={CONTROL_IDS.provider}
               value={config.provider}
               onChange={(event) => updateConfig('provider', event.target.value)}
               className={CONTROL_CLASS}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Model</label>
+            <label htmlFor={CONTROL_IDS.model} className="block text-sm font-medium text-gray-700">Model</label>
             <input
+              id={CONTROL_IDS.model}
               value={config.model}
               onChange={(event) => updateConfig('model', event.target.value)}
               className={CONTROL_CLASS}
@@ -84,8 +96,9 @@ const PipelineConfigPanel = ({
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">Collection</label>
+          <label htmlFor={CONTROL_IDS.collectionId} className="block text-sm font-medium text-gray-700">Collection</label>
           <input
+            id={CONTROL_IDS.collectionId}
             value={config.collectionId}
             onChange={(event) => updateConfig('collectionId', event.target.value)}
             className={CONTROL_CLASS}

@@ -12,6 +12,9 @@ export const RAG_MODE_LABELS = {
 };
 
 const RAG_MODE_ORDER = ['llm_only', 'basic_rag', 'optimized_rag'];
+const DEFAULT_TOP_K = 3;
+const MIN_TOP_K = 1;
+const MAX_TOP_K = 50;
 
 /**
  * @brief 深度移除前端禁止展示的隐藏评测字段。
@@ -69,6 +72,15 @@ export const buildEvaluationRows = (summary = {}) =>
     ...(summary[mode] || {}),
   }));
 
+const normalizeTopK = (value) => {
+  const numericValue = Number(value);
+  if (!Number.isFinite(numericValue)) {
+    return DEFAULT_TOP_K;
+  }
+
+  return Math.min(MAX_TOP_K, Math.max(MIN_TOP_K, Math.trunc(numericValue)));
+};
+
 /**
  * @brief 构造 POST /rag/answer 使用的 RagRequest 兼容 JSON。
  * @param {object} config 前端 pipeline 配置。
@@ -83,12 +95,10 @@ export const createRagAnswerRequestPayload = ({
   collectionId,
   metadata = {},
 }) => {
-  const numericTopK = Number(topK);
-
   return removeForbiddenFields({
     query,
     rag_mode: ragMode || 'basic_rag',
-    top_k: Number.isFinite(numericTopK) && numericTopK > 0 ? numericTopK : 3,
+    top_k: normalizeTopK(topK),
     provider: provider || 'mock',
     model: model || 'mock-generator',
     collection_id: collectionId || 'course-qa-default',

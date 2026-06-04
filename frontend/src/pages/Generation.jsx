@@ -245,6 +245,7 @@ const Generation = () => {
       });
     } catch (error) {
       console.error('RAG answer request error:', error);
+      setRagAnswer(null);
       setRagRequestStatus({
         type: 'error',
         message: `/rag/answer 暂不可用：${error.message}。可使用课程 QA Mock fallback 继续展示。`,

@@ -101,6 +101,20 @@ test('createRagAnswerRequestPayload falls back to stage A mock defaults', () => 
   assert.equal(payload.collection_id, 'course-qa-default');
 });
 
+test('createRagAnswerRequestPayload normalizes topK to integer range', () => {
+  const baseConfig = {
+    query: '什么是自然语言处理？',
+    ragMode: 'basic_rag',
+    provider: 'mock',
+    model: 'mock-generator',
+    collectionId: 'course-qa-default',
+  };
+
+  assert.equal(createRagAnswerRequestPayload({ ...baseConfig, topK: 2.5 }).top_k, 2);
+  assert.equal(createRagAnswerRequestPayload({ ...baseConfig, topK: -4 }).top_k, 1);
+  assert.equal(createRagAnswerRequestPayload({ ...baseConfig, topK: 999 }).top_k, 50);
+});
+
 test('normalizeEvaluationSummary accepts remote wrapper payload and removes hidden labels', () => {
   const summary = normalizeEvaluationSummary({
     summary: {
