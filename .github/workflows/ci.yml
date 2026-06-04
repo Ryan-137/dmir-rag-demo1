@@ -105,3 +105,6 @@ jobs:
 
       - name: Run fake smoke pipeline
         run: .venv/bin/python scripts/run_smoke_pipeline.py --mode fake
+
+      - name: Run /rag/answer smoke
+        run: .venv/bin/python scripts/run_rag_answer_smoke.py

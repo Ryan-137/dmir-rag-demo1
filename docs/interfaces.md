@@ -114,6 +114,42 @@ class Generator(Protocol):
     def generate(self, request: RagRequest, contexts: list[SearchHit]) -> RagAnswer: ...
 ```
 
+## `/rag/answer` 阶段 A 主链路
+
+#8 阶段 A 已固定最小集成入口：
+
+```http
+POST /rag/answer
+```
+
+请求体使用 `RagRequest` 兼容 JSON。阶段 A 默认读取 `sample_data/course_qa_public.json`，
+只支持 `provider=mock` 与 `model=mock-generator`，用于让前端和评测先接统一接口。
+真实 Qwen embedding / LLM / Chroma adapter 仍由 #2/#3/#4 独立接入，不阻塞这个主链路。
+
+最小请求示例：
+
+```json
+{
+  "query": "什么是自然语言处理？",
+  "rag_mode": "basic_rag",
+  "top_k": 3,
+  "collection_id": "course-qa-default",
+  "provider": "mock",
+  "model": "mock-generator",
+  "require_citations": true,
+  "metadata": {}
+}
+```
+
+本地不启动 uvicorn 的 smoke 命令：
+
+```shell
+python scripts/run_rag_answer_smoke.py --pretty
+```
+
+隐藏标签规则不变：`answer_quality` 禁止进入 `/rag/answer` 请求、RAG 索引、prompt、
+retrieved hits、trace 和前端展示；只允许 #7 评测脚本在生成完成后读取。
+
 ## `/rag/answer` 输出目标
 
 前端、评测脚本和展示都应最终读取同一个 `RagAnswer`：

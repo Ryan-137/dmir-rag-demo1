@@ -12,6 +12,7 @@
 ## 当前状态
 
 - P0 已完成：`backend/rag_core/contracts/`、fake pipeline、contract tests 和 smoke pipeline 已进入 CI。
+- #8 阶段 A 已固定最小 `/rag/answer` integration spine：先用课程 QA public 数据和 fake/mock pipeline 返回 `RagAnswer`。
 - 第一阶段默认输入是课程 QA 数据：`sample_data/course_qa_public.json`。
 - 课程 QA 的 0-9 档质量标签只保存在 `eval/labels/course_qa_quality_labels.json`，禁止进入 RAG 索引、prompt、trace 或前端展示。
 - 新论文任务没有取消，已经并入 #5、#7、#8 和各模块的阶段 B；只是排在课程 QA 默认链路跑通之后。
@@ -22,6 +23,7 @@
 python -m compileall backend/rag_core scripts/run_smoke_pipeline.py
 pytest tests/contract
 python scripts/run_smoke_pipeline.py --mode fake --pretty
+python scripts/run_rag_answer_smoke.py --pretty
 ```
 
 `run_smoke_pipeline.py` 默认读取 `sample_data/course_qa_public.json`，输出 `RagAnswer`，包含：
@@ -68,6 +70,7 @@ eval/
 
 scripts/
   run_smoke_pipeline.py           # P0 冒烟流水线
+  run_rag_answer_smoke.py         # /rag/answer 接口冒烟脚本
 
 tests/
   contract/                       # contract tests
@@ -157,6 +160,7 @@ GitHub Actions 当前会运行：
 - 后端：安装依赖、`compileall backend`、导入服务模块
 - P0：`pytest tests/contract`
 - P0：`python scripts/run_smoke_pipeline.py --mode fake`
+- #8 阶段 A：`python scripts/run_rag_answer_smoke.py`
 
 普通 PR 不应依赖真实网络、真实 API、真实模型下载或大型 benchmark。
 

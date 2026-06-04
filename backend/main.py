@@ -22,6 +22,9 @@ import pandas as pd
 from pathlib import Path
 from services.generation_service import GenerationService
 from typing import List, Dict, Optional
+from rag_core.contracts.errors import ContractViolation, EmptyCorpus, ProviderUnavailable, RagCoreError
+from rag_core.contracts.models import RagRequest
+from rag_core.pipeline import CourseQaRagSpine
 
 # 设置日志
 logging.basicConfig(level=logging.INFO)
@@ -47,6 +50,28 @@ app.add_middleware(
 
 ## @brief 供生成端点复用的共享生成服务实例。
 generation_service = GenerationService()
+
+## @brief #8 阶段 A 的课程 QA 集成主链路。
+course_qa_rag_spine = CourseQaRagSpine()
+
+
+@app.post("/rag/answer")
+async def rag_answer(request: RagRequest):
+    """! @brief 使用统一 RagRequest / RagAnswer contract 执行课程 QA 问答。
+    @details 阶段 A 固定接入 `sample_data/course_qa_public.json` 和 fake/mock pipeline。
+    真实 provider 后续由 #2/#3/#4 接入；本端点先为 #6 前端与 #7 eval 固定主链路。
+    @param request 契约层统一问答请求。
+    @return `RagAnswer.model_dump(mode="json")` 序列化结果。
+    """
+    try:
+        answer = course_qa_rag_spine.answer(request)
+        return answer.model_dump(mode="json")
+    except (ContractViolation, ProviderUnavailable) as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except EmptyCorpus as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    except RagCoreError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 @app.post("/process")
 async def process_file(
