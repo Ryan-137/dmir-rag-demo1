@@ -2,26 +2,22 @@
  * @file Generation.jsx
  * @brief 响应生成工作流页面。
  */
-import React, { useState, useEffect } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import RandomImage from '../components/RandomImage';
 import { apiBaseUrl } from '../config/config';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import EvaluationDashboard from '../components/rag/EvaluationDashboard';
+import MarkdownAnswer from '../components/rag/MarkdownAnswer';
+import PipelineConfigPanel from '../components/rag/PipelineConfigPanel';
+import RetrievalTracePanel from '../components/rag/RetrievalTracePanel';
+import {
+  createRagAnswerRequestPayload,
+  createSafeRagAnswerViewModel,
+  normalizeEvaluationSummary,
+  removeForbiddenFields,
+} from '../components/rag/ragViewModel';
+import { courseQaMockRagAnswer, demoEvaluationSummary } from '../config/ragDemoData';
 
-/**
- * @brief 渲染生成提供方返回的 Markdown 内容。
- * @param {{markdownText: string}} props 组件属性。
- * @returns {JSX.Element} Markdown 渲染后的响应内容。
- */
-const MarkdownViewer = ({ markdownText }) => {
-  return (
-    <div className="markdown-container">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownText}</ReactMarkdown>
-    </div>
-  );
-};
-
+const DEFAULT_COURSE_QA_QUERY = '什么是自然语言处理？';
 
 /**
  * @brief 渲染回答生成控件和检索上下文预览。
@@ -34,42 +30,94 @@ const Generation = () => {
   const [apiKey, setApiKey] = useState('');
   const [models, setModels] = useState({});
   const [isGenerating, setIsGenerating] = useState(false);
-  const [response, setResponse] = useState('');
   const [status, setStatus] = useState('');
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(DEFAULT_COURSE_QA_QUERY);
   const [searchResults, setSearchResults] = useState([]);
   const [selectedFile, setSelectedFile] = useState('');
   const [searchFiles, setSearchFiles] = useState([]);
   const [showReasoning, setShowReasoning] = useState(true);
   const [loadModel, setLoadModel] = useState(false);
+  const [pipelineConfig, setPipelineConfig] = useState({
+    ragMode: 'basic_rag',
+    topK: 3,
+    provider: 'mock',
+    model: 'mock-generator',
+    collectionId: 'course-qa-default',
+  });
+  const [ragAnswer, setRagAnswer] = useState(null);
+  const [isRagAnswerRunning, setIsRagAnswerRunning] = useState(false);
+  const [ragRequestStatus, setRagRequestStatus] = useState({
+    type: 'info',
+    message: '主路径为 POST /rag/answer；后端不可用时可使用课程 QA Mock fallback。',
+  });
+  const [legacyStatus, setLegacyStatus] = useState(null);
+  const [evaluationSummary, setEvaluationSummary] = useState(demoEvaluationSummary);
+  const [evaluationStatus, setEvaluationStatus] = useState({
+    type: 'info',
+    message: '正在尝试加载评测摘要，失败时使用 fallback 摘要。',
+  });
 
-  // 加载可用模型列表和搜索结果文件列表
+  const safeRagAnswer = useMemo(() => createSafeRagAnswerViewModel(ragAnswer), [ragAnswer]);
+
+  /** @brief 加载旧生成流程的可选数据；失败不影响 /rag/answer dashboard。 */
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // 获取模型列表
         const modelsResponse = await fetch(`${apiBaseUrl}/generation/models`);
-        const modelsData = await modelsResponse.json();
-        setModels(modelsData.models);
+        if (modelsResponse.ok) {
+          const modelsData = await modelsResponse.json();
+          setModels(modelsData.models || {});
+        } else {
+          setModels({});
+        }
 
-        // 获取搜索结果文件列表
         const filesResponse = await fetch(`${apiBaseUrl}/search-results`);
-        const filesData = await filesResponse.json();
-        setSearchFiles(filesData.files);
+        if (filesResponse.ok) {
+          const filesData = await filesResponse.json();
+          setSearchFiles(filesData.files || []);
+        } else {
+          setSearchFiles([]);
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
-        setStatus('获取数据失败');
+        setModels({});
+        setSearchFiles([]);
+        setLegacyStatus('旧生成流程数据不可用；不影响 /rag/answer 展示。');
       }
     };
 
     fetchData();
   }, []);
 
-  // 加载选中的搜索结果文件内容
+  /** @brief 预留评测摘要加载入口；后端或静态文件不可用时保留 fallback。 */
+  useEffect(() => {
+    const fetchEvaluationSummary = async () => {
+      try {
+        const response = await fetch(`${apiBaseUrl}/eval/results/course_qa_eval.json`);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const payload = await response.json();
+        setEvaluationSummary(normalizeEvaluationSummary(payload));
+        setEvaluationStatus({ type: 'info', message: '已加载评测摘要。' });
+      } catch (error) {
+        console.info('Evaluation summary fallback:', error);
+        setEvaluationSummary(demoEvaluationSummary);
+        setEvaluationStatus({
+          type: 'error',
+          message: '评测摘要暂不可用，当前显示 fallback 示例摘要。',
+        });
+      }
+    };
+
+    fetchEvaluationSummary();
+  }, []);
+
+  /** @brief 加载选中的搜索结果文件内容。 */
   useEffect(() => {
     const loadSearchResults = async () => {
       if (!selectedFile) {
-        setQuery('');
+        setQuery(DEFAULT_COURSE_QA_QUERY);
         setSearchResults([]);
         return;
       }
@@ -88,7 +136,7 @@ const Generation = () => {
     loadSearchResults();
   }, [selectedFile]);
 
-  // 如果从搜索页面跳转过来，获取搜索结果
+  /** @brief 如果从搜索页面跳转过来，获取搜索结果。 */
   useEffect(() => {
     if (location.state) {
       const { query: searchQuery, results } = location.state;
@@ -132,7 +180,6 @@ const Generation = () => {
       }
 
       const data = await response.json();
-      setResponse(data.response);
       setLoadModel(false);
       setStatus(`生成完成！modelStatus: ${loadModel} 结果已保存至: ${data.saved_filepath}`);
     } catch (error) {
@@ -144,6 +191,86 @@ const Generation = () => {
     }
   };
 
+  const handleRunRagAnswer = async () => {
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery) {
+      setRagRequestStatus({
+        type: 'error',
+        message: '请输入问题后再调用 /rag/answer。',
+      });
+      return;
+    }
+
+    const payload = createRagAnswerRequestPayload({
+      query: trimmedQuery,
+      ragMode: pipelineConfig.ragMode,
+      topK: pipelineConfig.topK,
+      provider: pipelineConfig.provider,
+      model: pipelineConfig.model,
+      collectionId: pipelineConfig.collectionId,
+      metadata: {},
+    });
+
+    setIsRagAnswerRunning(true);
+    setRagRequestStatus({
+      type: 'info',
+      message: '正在调用 POST /rag/answer...',
+    });
+
+    try {
+      const response = await fetch(`${apiBaseUrl}/rag/answer`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        let detail = `HTTP ${response.status}`;
+        try {
+          const errorBody = await response.json();
+          detail = errorBody.detail || detail;
+        } catch {
+          detail = response.statusText || detail;
+        }
+        throw new Error(detail);
+      }
+
+      const data = await response.json();
+      setRagAnswer(removeForbiddenFields(data));
+      setRagRequestStatus({
+        type: 'info',
+        message: '已从 /rag/answer 获取 RagAnswer，当前展示真实主链路响应。',
+      });
+    } catch (error) {
+      console.error('RAG answer request error:', error);
+      setRagAnswer(null);
+      setRagRequestStatus({
+        type: 'error',
+        message: `/rag/answer 暂不可用：${error.message}。可使用课程 QA Mock fallback 继续展示。`,
+      });
+    } finally {
+      setIsRagAnswerRunning(false);
+    }
+  };
+
+  const handleUseMockAnswer = () => {
+    setRagAnswer(courseQaMockRagAnswer);
+    setPipelineConfig((currentConfig) => ({
+      ...currentConfig,
+      ragMode: 'basic_rag',
+      topK: 3,
+      provider: 'mock',
+      model: 'mock-generator',
+      collectionId: 'course-qa-default',
+    }));
+    setRagRequestStatus({
+      type: 'info',
+      message: '当前展示课程 QA Mock fallback；默认主路径仍是 POST /rag/answer。',
+    });
+  };
+
   return (
     <div className="p-6">
       <h1 className="text-blue-500 text-3xl font-bold text-center mb-6"> 检索增强生成工具 </h1>
@@ -151,7 +278,6 @@ const Generation = () => {
       <h2 className="text-2xl font-bold mb-6">响应生成</h2>
       
       <div className="grid grid-cols-12 gap-6">
-        {/* 左侧面板：生成控件 */}
         <div className="col-span-4 space-y-4">
           <div className="p-4 border rounded-lg bg-white shadow-sm">
             <div className="space-y-4">
@@ -179,132 +305,168 @@ const Generation = () => {
                     </option>
                   ))}
                 </select>
+                {legacyStatus && (
+                  <div className="mt-2 rounded border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-600">
+                    {legacyStatus}
+                  </div>
+                )}
               </div>
 
-              {/*selectedFile && */ (
-                <>
+              <>
+                <div>
+                  <label className="block text-sm font-medium mb-1">生成模型提供方</label>
+                  <select
+                    value={provider}
+                    onChange={(e) => setProvider(e.target.value)}
+                    className="block w-full p-2 border rounded"
+                  >
+                    <option value="">Select provider...</option>
+                    {Object.keys(models).map(p => (
+                      <option key={p} value={p}>{p}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {provider && (
                   <div>
-                    <label className="block text-sm font-medium mb-1">生成模型提供方</label>
+                    <label className="block text-sm font-medium mb-1">生成模型</label>
                     <select
-                      value={provider}
-                      onChange={(e) => setProvider(e.target.value)}
+                      value={modelName}
+                      onChange={(e) => {setModelName(e.target.value); setLoadModel(true)}}
                       className="block w-full p-2 border rounded"
                     >
-                      <option value="">Select provider...</option>
-                      {Object.keys(models).map(p => (
-                        <option key={p} value={p}>{p}</option>
+                      <option value="">Select model...</option>
+                      {Object.entries(models[provider] || {}).map(([id, name]) => (
+                        <option key={id} value={id}>
+                          {id === 'deepseek-v3' ? 'DeepSeek V3' :
+                           id === 'deepseek-r1' ? 'DeepSeek R1' :
+                           name}
+                        </option>
                       ))}
                     </select>
                   </div>
+                )}
 
-                  {provider && (
-                    <div>
-                      <label className="block text-sm font-medium mb-1">生成模型</label>
-                      <select
-                        value={modelName}
-                        onChange={(e) => {setModelName(e.target.value); setLoadModel(true)}}
-                        className="block w-full p-2 border rounded"
-                      >
-                        <option value="">Select model...</option>
-                        {Object.entries(models[provider] || {}).map(([id, name]) => (
-                          <option key={id} value={id}>
-                            {id === 'deepseek-v3' ? 'DeepSeek V3' :
-                             id === 'deepseek-r1' ? 'DeepSeek R1' :
-                             name}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  )}
+                {(provider === 'openai' || provider === 'deepseek') && (
+                  <div>
+                    <label className="block text-sm font-medium mb-1">API Key</label>
+                    <input
+                      type="password"
+                      value={apiKey}
+                      onChange={(e) => setApiKey(e.target.value)}
+                      placeholder="Enter your API key..."
+                      className="block w-full p-2 border rounded"
+                    />
+                  </div>
+                )}
 
-                  {(provider === 'openai' || provider === 'deepseek') && (
-                    <div>
-                      <label className="block text-sm font-medium mb-1">API Key</label>
-                      <input
-                        type="password"
-                        value={apiKey}
-                        onChange={(e) => setApiKey(e.target.value)}
-                        placeholder="Enter your API key..."
-                        className="block w-full p-2 border rounded"
-                      />
-                    </div>
-                  )}
+                {provider === 'deepseek' && modelName === 'deepseek-r1' && (
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      id="showReasoning"
+                      checked={showReasoning}
+                      onChange={(e) => setShowReasoning(e.target.checked)}
+                      className="rounded border-gray-300 text-green-500 focus:ring-green-500"
+                    />
+                    <label htmlFor="showReasoning" className="text-sm font-medium">
+                      显示思维链过程
+                    </label>
+                  </div>
+                )}
 
-                  {provider === 'deepseek' && modelName === 'deepseek-r1' && (
-                    <div className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        id="showReasoning"
-                        checked={showReasoning}
-                        onChange={(e) => setShowReasoning(e.target.checked)}
-                        className="rounded border-gray-300 text-green-500 focus:ring-green-500"
-                      />
-                      <label htmlFor="showReasoning" className="text-sm font-medium">
-                        显示思维链过程
-                      </label>
-                    </div>
-                  )}
+                <button
+                  onClick={handleGenerate}
+                  disabled={isGenerating}
+                  className="w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-green-300"
+                >
+                  {isGenerating ? '生成回答中...' : '生成回答'}
+                </button>
 
-                  <button
-                    onClick={handleGenerate}
-                    disabled={isGenerating}
-                    className="w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-green-300"
-                  >
-                    {isGenerating ? '生成回答中...' : '生成回答'}
-                  </button>
-
-                  {status && (
-                    <div className={`p-4 rounded-lg ${
-                      status.includes('失败') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
-                    }`}>
-                      {status}
-                    </div>
-                  )}
-                </>
-              )}
+                {status && (
+                  <div className={`p-4 rounded-lg ${
+                    status.includes('失败') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+                  }`}>
+                    {status}
+                  </div>
+                )}
+              </>
             </div>
           </div>
+
+          <PipelineConfigPanel
+            config={pipelineConfig}
+            onConfigChange={setPipelineConfig}
+            onRunRagAnswer={handleRunRagAnswer}
+            onUseMockAnswer={handleUseMockAnswer}
+            isRunning={isRagAnswerRunning}
+            requestStatus={ragRequestStatus}
+          />
         </div>
 
-        {/* 右侧面板：上下文和回答 */}
-        <div className="col-span-8">
-          {selectedFile ? (
-            <>
-              {/* 搜索结果上下文 */}
-              <div className="mb-6 p-4 border rounded-lg bg-white shadow-sm">
-                <h3 className="text-xl font-semibold mb-4">检索的上下文</h3>
-                <div className="space-y-4 max-h-[300px] overflow-y-auto">
-                  {searchResults.map((result, idx) => (
-                    <div key={idx} className="p-4 border rounded bg-gray-50">
-                      <div className="flex justify-between items-start mb-2">
-                        <span className="font-medium text-sm text-gray-500">
-                          Match Score: {(result.score * 100).toFixed(1)}%
-                        </span>
-                        <div className="text-sm text-gray-500">
-                          <div>Source: {result.metadata.source}</div>
-                          <div>Page: {result.metadata.page}</div>
-                        </div>
-                      </div>
-                      <p className="text-sm whitespace-pre-wrap">{result.text}</p>
-                    </div>
-                  ))}
+        <div className="col-span-8 space-y-6">
+          <div className="rounded-lg border bg-slate-900 p-4 text-white shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h3 className="text-xl font-semibold">Contract RAG 展示</h3>
+                <p className="text-sm text-slate-300">
+                  前端只读取 RagAnswer 字段，可复用在课程 QA 和论文 RAG。
+                </p>
+              </div>
+              <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="rounded bg-white/10 px-3 py-2">
+                  <div className="text-slate-300">Hits</div>
+                  <div className="text-lg font-semibold">{safeRagAnswer.retrievedHits.length}</div>
+                </div>
+                <div className="rounded bg-white/10 px-3 py-2">
+                  <div className="text-slate-300">Citations</div>
+                  <div className="text-lg font-semibold">{safeRagAnswer.citations.length}</div>
+                </div>
+                <div className="rounded bg-white/10 px-3 py-2">
+                  <div className="text-slate-300">Trace</div>
+                  <div className="text-lg font-semibold">{safeRagAnswer.trace.length}</div>
                 </div>
               </div>
-           </>
-          ) : (
-            <div className="mb-6 p-4 border rounded-lg bg-white shadow-sm">
-                <h3 className="text-xl font-semibold mb-4">无检索上下文</h3>
             </div>
-          )}
-              {/* 生成回答 */}
-              {response && (
-                <div className="p-4 border rounded-lg bg-white shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">生成的回答</h3>
-                  <div className="p-4 border rounded bg-gray-50">
-                    <p className="whitespace-pre-wrap"><MarkdownViewer markdownText={response} /></p>
+          </div>
+
+          <MarkdownAnswer
+            answerMarkdown={safeRagAnswer.answerMarkdown}
+            warnings={safeRagAnswer.warnings}
+            contractVersion={safeRagAnswer.contractVersion}
+          />
+
+          <RetrievalTracePanel
+            retrievedHits={safeRagAnswer.retrievedHits}
+            citations={safeRagAnswer.citations}
+            trace={safeRagAnswer.trace}
+          />
+
+          <EvaluationDashboard summary={evaluationSummary} status={evaluationStatus} />
+
+          <div className="rounded-lg border bg-white p-4 shadow-sm">
+            <h3 className="mb-4 text-xl font-semibold">旧流程检索上下文</h3>
+            {selectedFile ? (
+              <div className="max-h-[300px] space-y-4 overflow-y-auto">
+                {searchResults.map((result, idx) => (
+                  <div key={`${result.text}-${idx}`} className="rounded border bg-gray-50 p-4">
+                    <div className="mb-2 flex items-start justify-between gap-3">
+                      <span className="text-sm font-medium text-gray-500">
+                        Match Score: {(Number(result.score || 0) * 100).toFixed(1)}%
+                      </span>
+                      <div className="text-sm text-gray-500">
+                        <div>Source: {result.metadata?.source || '-'}</div>
+                        <div>Page: {result.metadata?.page || result.metadata?.page_number || '-'}</div>
+                      </div>
+                    </div>
+                    <p className="whitespace-pre-wrap text-sm">{result.text}</p>
                   </div>
-                </div>
-              )}
+                ))}
+              </div>
+            ) : (
+              <div className="rounded border border-dashed p-4 text-sm text-gray-500">无检索上下文。</div>
+            )}
+          </div>
         </div>
       </div>
     </div>
