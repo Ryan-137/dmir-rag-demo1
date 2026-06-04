@@ -3,7 +3,9 @@ import test from 'node:test';
 
 import {
   buildEvaluationRows,
+  createRagAnswerRequestPayload,
   createSafeRagAnswerViewModel,
+  normalizeEvaluationSummary,
 } from './ragViewModel.js';
 
 test('createSafeRagAnswerViewModel removes answer_quality from nested display data', () => {
@@ -56,4 +58,61 @@ test('buildEvaluationRows keeps stable llm/basic/optimized ordering', () => {
   );
   assert.equal(rows[2].label, 'Optimized RAG');
   assert.equal(rows[1].cited, 3);
+});
+
+test('createRagAnswerRequestPayload builds RagRequest compatible body without hidden labels', () => {
+  const payload = createRagAnswerRequestPayload({
+    query: '什么是自然语言处理？',
+    ragMode: 'basic_rag',
+    topK: 3,
+    provider: 'mock',
+    model: 'mock-generator',
+    collectionId: 'course-qa-default',
+    metadata: { answer_quality: 9, max_questions: 5 },
+  });
+
+  assert.deepEqual(payload, {
+    query: '什么是自然语言处理？',
+    rag_mode: 'basic_rag',
+    top_k: 3,
+    provider: 'mock',
+    model: 'mock-generator',
+    collection_id: 'course-qa-default',
+    require_citations: true,
+    metadata: { max_questions: 5 },
+  });
+  assert.equal(JSON.stringify(payload).includes('answer_quality'), false);
+});
+
+test('createRagAnswerRequestPayload falls back to stage A mock defaults', () => {
+  const payload = createRagAnswerRequestPayload({
+    query: '什么是自然语言处理？',
+    ragMode: '',
+    topK: 'bad-value',
+    provider: '',
+    model: '',
+    collectionId: '',
+  });
+
+  assert.equal(payload.rag_mode, 'basic_rag');
+  assert.equal(payload.top_k, 3);
+  assert.equal(payload.provider, 'mock');
+  assert.equal(payload.model, 'mock-generator');
+  assert.equal(payload.collection_id, 'course-qa-default');
+});
+
+test('normalizeEvaluationSummary accepts remote wrapper payload and removes hidden labels', () => {
+  const summary = normalizeEvaluationSummary({
+    summary: {
+      basic_rag: {
+        answerable: 4,
+        cited: 3,
+        answer_quality: 8,
+      },
+    },
+  });
+
+  assert.equal(summary.basic_rag.answerable, 4);
+  assert.equal(summary.basic_rag.cited, 3);
+  assert.equal(JSON.stringify(summary).includes('answer_quality'), false);
 });

@@ -70,6 +70,47 @@ export const buildEvaluationRows = (summary = {}) =>
   }));
 
 /**
+ * @brief 构造 POST /rag/answer 使用的 RagRequest 兼容 JSON。
+ * @param {object} config 前端 pipeline 配置。
+ * @returns {object} RagRequest 请求体。
+ */
+export const createRagAnswerRequestPayload = ({
+  query,
+  ragMode,
+  topK,
+  provider,
+  model,
+  collectionId,
+  metadata = {},
+}) => {
+  const numericTopK = Number(topK);
+
+  return removeForbiddenFields({
+    query,
+    rag_mode: ragMode || 'basic_rag',
+    top_k: Number.isFinite(numericTopK) && numericTopK > 0 ? numericTopK : 3,
+    provider: provider || 'mock',
+    model: model || 'mock-generator',
+    collection_id: collectionId || 'course-qa-default',
+    require_citations: true,
+    metadata,
+  });
+};
+
+/**
+ * @brief 规范化评测摘要响应，兼容直接摘要和 {summary: ...} 包装。
+ * @param {object | null | undefined} payload 评测摘要响应。
+ * @returns {object} 可交给 EvaluationDashboard 的摘要。
+ */
+export const normalizeEvaluationSummary = (payload) => {
+  const safePayload = removeForbiddenFields(payload || {});
+  if (safePayload.summary && typeof safePayload.summary === 'object') {
+    return safePayload.summary;
+  }
+  return safePayload;
+};
+
+/**
  * @brief 将数值耗时格式化为毫秒。
  * @param {number | string | null | undefined} value 原始耗时。
  * @returns {string} 前端展示文本。

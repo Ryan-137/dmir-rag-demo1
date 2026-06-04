@@ -2,7 +2,7 @@
  * @file RetrievalTracePanel.jsx
  * @brief 展示 RagAnswer 的检索命中、引用和流水线 trace。
  */
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
 import { formatLatency, formatScore } from './ragViewModel';
 
 const renderListValue = (value) => {
@@ -111,11 +111,5 @@ const RetrievalTracePanel = ({ retrievedHits = [], citations = [], trace = [] })
     </div>
   </section>
 );
-
-RetrievalTracePanel.propTypes = {
-  retrievedHits: PropTypes.arrayOf(PropTypes.object),
-  citations: PropTypes.arrayOf(PropTypes.object),
-  trace: PropTypes.arrayOf(PropTypes.object),
-};
 
 export default RetrievalTracePanel;

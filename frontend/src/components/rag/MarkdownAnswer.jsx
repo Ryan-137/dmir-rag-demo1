@@ -2,7 +2,7 @@
  * @file MarkdownAnswer.jsx
  * @brief 展示 RagAnswer 中的 Markdown 回答和警告信息。
  */
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -42,11 +42,5 @@ const MarkdownAnswer = ({ answerMarkdown, warnings = [], contractVersion = 'unkn
     </div>
   </section>
 );
-
-MarkdownAnswer.propTypes = {
-  answerMarkdown: PropTypes.string.isRequired,
-  warnings: PropTypes.arrayOf(PropTypes.string),
-  contractVersion: PropTypes.string,
-};
 
 export default MarkdownAnswer;

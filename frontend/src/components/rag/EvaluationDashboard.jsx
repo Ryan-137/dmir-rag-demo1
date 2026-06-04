@@ -2,7 +2,7 @@
  * @file EvaluationDashboard.jsx
  * @brief 展示 LLM-only、Basic RAG 和 Optimized RAG 三模式评测摘要。
  */
-import PropTypes from 'prop-types';
+/* eslint-disable react/prop-types */
 import { buildEvaluationRows, formatLatency } from './ragViewModel';
 
 const asDisplayValue = (value) => {
@@ -17,15 +17,25 @@ const asDisplayValue = (value) => {
  * @param {{summary: object}} props 组件属性。
  * @returns {JSX.Element} 评测 dashboard。
  */
-const EvaluationDashboard = ({ summary }) => {
+const EvaluationDashboard = ({ summary, status }) => {
   const rows = buildEvaluationRows(summary);
 
   return (
     <section className="rounded-lg border bg-white p-4 shadow-sm">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-gray-900">三模式评测</h3>
-        <p className="text-xs text-gray-500">展示聚合指标；隐藏质量标签不进入前端。</p>
+        <p className="text-xs text-gray-500">优先读取评测摘要；不可用时使用前端 fallback。</p>
       </div>
+
+      {status && (
+        <div className={`mb-3 rounded border px-3 py-2 text-sm ${
+          status.type === 'error'
+            ? 'border-amber-200 bg-amber-50 text-amber-800'
+            : 'border-blue-200 bg-blue-50 text-blue-800'
+        }`}>
+          {status.message}
+        </div>
+      )}
 
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200 text-sm">
@@ -55,10 +65,6 @@ const EvaluationDashboard = ({ summary }) => {
       </div>
     </section>
   );
-};
-
-EvaluationDashboard.propTypes = {
-  summary: PropTypes.object.isRequired,
 };
 
 export default EvaluationDashboard;

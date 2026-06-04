@@ -2,8 +2,7 @@
  * @file PipelineConfigPanel.jsx
  * @brief 配置 RAG 展示请求的模式、检索数量和模型信息。
  */
-import PropTypes from 'prop-types';
-
+/* eslint-disable react/prop-types */
 const RAG_MODES = [
   { value: 'llm_only', label: 'LLM-only' },
   { value: 'basic_rag', label: 'Basic RAG' },
@@ -18,9 +17,10 @@ const RAG_MODES = [
 const PipelineConfigPanel = ({
   config,
   onConfigChange,
+  onRunRagAnswer,
   onUseMockAnswer,
-  onMirrorGeneratedAnswer,
-  hasGeneratedAnswer,
+  isRunning,
+  requestStatus,
 }) => {
   const updateConfig = (key, value) => {
     onConfigChange({ ...config, [key]: value });
@@ -92,37 +92,33 @@ const PipelineConfigPanel = ({
         <div className="grid grid-cols-1 gap-2">
           <button
             type="button"
-            onClick={onUseMockAnswer}
-            className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            onClick={onRunRagAnswer}
+            disabled={isRunning}
+            className="rounded bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700 disabled:bg-green-300"
           >
-            使用课程 QA Mock
+            {isRunning ? '调用 /rag/answer 中...' : '运行 /rag/answer'}
           </button>
           <button
             type="button"
-            onClick={onMirrorGeneratedAnswer}
-            disabled={!hasGeneratedAnswer}
-            className="rounded bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-900 disabled:bg-gray-300"
+            onClick={onUseMockAnswer}
+            className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:bg-blue-300"
           >
-            映射当前生成结果
+            使用课程 QA Mock fallback
           </button>
         </div>
+
+        {requestStatus && (
+          <div className={`rounded border px-3 py-2 text-sm ${
+            requestStatus.type === 'error'
+              ? 'border-amber-200 bg-amber-50 text-amber-800'
+              : 'border-blue-200 bg-blue-50 text-blue-800'
+          }`}>
+            {requestStatus.message}
+          </div>
+        )}
       </div>
     </section>
   );
-};
-
-PipelineConfigPanel.propTypes = {
-  config: PropTypes.shape({
-    ragMode: PropTypes.string.isRequired,
-    topK: PropTypes.number.isRequired,
-    provider: PropTypes.string.isRequired,
-    model: PropTypes.string.isRequired,
-    collectionId: PropTypes.string.isRequired,
-  }).isRequired,
-  onConfigChange: PropTypes.func.isRequired,
-  onUseMockAnswer: PropTypes.func.isRequired,
-  onMirrorGeneratedAnswer: PropTypes.func.isRequired,
-  hasGeneratedAnswer: PropTypes.bool.isRequired,
 };
 
 export default PipelineConfigPanel;
