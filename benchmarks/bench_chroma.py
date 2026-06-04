@@ -134,6 +134,8 @@ def load_course_qa_fixture(
         queries.append(question)
         qa_id = int(item.get("qa_id", item_count))
         for answer in item.get("answers", []):
+            if max_chunks is not None and len(chunks) >= max_chunks:
+                break
             text = str(answer.get("answer", "")).strip()
             if not text:
                 continue
@@ -158,8 +160,6 @@ def load_course_qa_fixture(
                     },
                 )
             )
-            if max_chunks is not None and len(chunks) >= max_chunks:
-                break
         if max_chunks is not None and len(chunks) >= max_chunks:
             break
 
