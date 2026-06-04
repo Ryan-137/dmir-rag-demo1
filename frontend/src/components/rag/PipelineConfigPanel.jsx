@@ -9,6 +9,9 @@ const RAG_MODES = [
   { value: 'optimized_rag', label: 'Optimized RAG' },
 ];
 
+const CONTROL_CLASS =
+  'mt-1 block w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-100';
+
 /**
  * @brief 渲染 RAG pipeline 配置控件。
  * @param {object} props 组件属性。
@@ -39,7 +42,7 @@ const PipelineConfigPanel = ({
           <select
             value={config.ragMode}
             onChange={(event) => updateConfig('ragMode', event.target.value)}
-            className="mt-1 block w-full rounded border border-gray-300 bg-white px-3 py-2 text-sm"
+            className={CONTROL_CLASS}
           >
             {RAG_MODES.map((mode) => (
               <option key={mode.value} value={mode.value}>
@@ -67,7 +70,7 @@ const PipelineConfigPanel = ({
             <input
               value={config.provider}
               onChange={(event) => updateConfig('provider', event.target.value)}
-              className="mt-1 block w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className={CONTROL_CLASS}
             />
           </div>
           <div>
@@ -75,7 +78,7 @@ const PipelineConfigPanel = ({
             <input
               value={config.model}
               onChange={(event) => updateConfig('model', event.target.value)}
-              className="mt-1 block w-full rounded border border-gray-300 px-3 py-2 text-sm"
+              className={CONTROL_CLASS}
             />
           </div>
         </div>
@@ -85,7 +88,7 @@ const PipelineConfigPanel = ({
           <input
             value={config.collectionId}
             onChange={(event) => updateConfig('collectionId', event.target.value)}
-            className="mt-1 block w-full rounded border border-gray-300 px-3 py-2 text-sm"
+            className={CONTROL_CLASS}
           />
         </div>
 
